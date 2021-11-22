@@ -1,4 +1,4 @@
-console.log('1' + 2);
+console.toLocaleString()log('1' + 2);
 
 console.log(typeof '1' + 2);
 
