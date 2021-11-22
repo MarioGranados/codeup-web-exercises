@@ -93,3 +93,23 @@ console.log(indexC);
 
 console.log(sample.substring(indexC, sample.indexOf("p") + 1 ) );
 
+// ex 2
+var littleMermaid = 3,
+    brotherBear = 5,
+    hercules = 1,
+    pricePerDay = 3,
+    fullPrice = littleMermaid * pricePerDay + brotherBear * pricePerDay + hercules * pricePerDay;
+
+console.log('total price is: ' + fullPrice);
+
+// ex 3
+var google = 400,
+    facebook = 350,
+    amazon = 380,
+    total = facebook * 10 + google + 6 + amazon * 4;
+
+console.log("total rate per hour: " + total.toFixed(2));
+
+var fullClass = true;
+
+console.log("class is not full " + fullClass);
