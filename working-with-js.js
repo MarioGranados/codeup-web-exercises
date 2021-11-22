@@ -78,3 +78,18 @@ console.log(!!'');
 console.log(!!"false");
 
 console.log(!!"0");
+
+var sample = 'Hello, CodeUp';
+sample.toUpperCase();
+sample += " Students";
+console.log(sample);
+
+sample = sample.replace(" Students", " Class");
+console.log(sample);
+
+var indexC = sample.indexOf('C');
+console.log(indexC);
+
+
+console.log(sample.substring(indexC, sample.indexOf("p") + 1 ) );
+
