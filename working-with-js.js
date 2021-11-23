@@ -79,6 +79,8 @@ console.log(!!"false");
 
 console.log(!!"0");
 
+//ex 1
+
 var sample = 'Hello, CodeUp';
 sample.toUpperCase();
 sample += " Students";
@@ -102,7 +104,7 @@ var littleMermaid = 3,
 
 console.log('total price is: ' + fullPrice);
 
-// ex 3
+//companies
 var google = 400,
     facebook = 350,
     amazon = 380,
@@ -110,6 +112,30 @@ var google = 400,
 
 console.log("total rate per hour: " + total.toFixed(2));
 
-var fullClass = true;
+//student enrollment
+var fullClass = false
+if (!fullClass) {
+    console.log("class is not full: continue to enroll");
+}
+else {
+    console.log('class is full: please wait for the next course');
+}
 
 console.log("class is not full " + fullClass);
+
+
+//product
+var item = 2,
+    offer = false;
+var productExp = item === 2 && !offer;
+console.log(productExp);
+
+//password
+var username = 'codeup',
+    password = 'notastrongpassword',
+    correctPass = 5,
+    userIn = 'Mario';
+
+
+console.log(correctPass == password.length && userIn != username);
+console.log(20 >= username.length);
