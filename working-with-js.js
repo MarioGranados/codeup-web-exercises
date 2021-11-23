@@ -93,7 +93,7 @@ var indexC = sample.indexOf('C');
 console.log(indexC);
 
 
-console.log(sample.substring(indexC, sample.indexOf("p") + 1 ) );
+console.log(sample.substring(indexC, sample.indexOf("p") + 1));
 
 // ex 2
 var littleMermaid = 3,
@@ -108,34 +108,32 @@ console.log('total price is: ' + fullPrice);
 var google = 400,
     facebook = 350,
     amazon = 380,
-    total = facebook * 10 + google + 6 + amazon * 4;
+    total = facebook * 10 + google * 6 + amazon * 4;
 
 console.log("total rate per hour: " + total.toFixed(2));
 
-//student enrollment
+//student enrollment thing
 var fullClass = false
-if (!fullClass) {
+var notConflict = true;
+if (!fullClass && notConflict) {
     console.log("class is not full: continue to enroll");
-}
-else {
+} else {
     console.log('class is full: please wait for the next course');
 }
-
-console.log("class is not full " + fullClass);
 
 
 //product
 var item = 2,
     offer = false;
-var productExp = item === 2 && !offer;
+var productExp = item > 2 && !offer;
 console.log(productExp);
 
 //password
 var username = 'codeup',
     password = 'notastrongpassword',
-    correctPass = 5,
+    passMaxLength = 5,
     userIn = 'Mario';
 
 
-console.log(correctPass == password.length && userIn != username);
-console.log(20 >= username.length);
+console.log(passMaxLength === password.length && userIn != username); // false
+console.log(20 >= username.length); // true
