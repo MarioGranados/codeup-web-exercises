@@ -42,7 +42,7 @@ console.log(fullName);
 
 //add
 /*let sumOfTwoNum = function (a, b) {
-    return a + b;
+    return a + b;ls
 }, diffOfTwoNum = function (a, b) {
     return a - b;
 }, productOfTwoNum = function (a, b) {
