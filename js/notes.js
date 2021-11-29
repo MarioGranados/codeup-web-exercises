@@ -1,4 +1,5 @@
-/*let isAtBar = true,
+/*
+let isAtBar = true,
     bac = .07,
     age = 22,
     cashOnHand = 10.32;
@@ -12,7 +13,7 @@ if (isAtBar && canHaveADrink) {
 } else {
     console.log('sorry mate, you can\'t have a drink');
 }
-console.log(canHaveADrink);*/
+console.log(canHaveADrink);*!/
 
 
 //functions
@@ -30,18 +31,18 @@ console.log(canHaveADrink);*/
 
 //return function
 
-/*
+
 function getFullName(firstName, lastName){
     return firstName + " " + lastName;
 }
 let fullName = getFullName('mario', 'granados');
 
 console.log(fullName);
-*/
+
 
 
 //add
-/*let sumOfTwoNum = function (a, b) {
+let sumOfTwoNum = function (a, b) {
     return a + b;ls
 }, diffOfTwoNum = function (a, b) {
     return a - b;
@@ -60,19 +61,21 @@ console.log(a + " + " + b + " = " + sumOfTwoNum(a, b));
 console.log(a + " - " + b + " = " + diffOfTwoNum(a, b));
 console.log(a + " * " + b + " = " + productOfTwoNum(a, b));
 console.log(a + " / " + b + " = " + dividendOfTwoNum(a, b));
-console.log(a + " % " + b + " = " + remainderOfTwoNum(a, b));*/
+console.log(a + " % " + b + " = " + remainderOfTwoNum(a, b));*!/
 
 //Conditionals
 
 //In plain English, what would change in your outfit if it were: sunny vs rainy vs snowy
 
 //I would wear a jacket if its snowy, take an umbrella if it were raining, if its sunny I would dress normal.
-let weather = 'sunny',
-    outfit;
+//let weather = 'sunny',
+  //  outfit;
+
+
 
 //if statement
 // if weather is funny,wear a shirt
-/*
+
 if (weather === 'sunny') {
     console.log('Wear a shirt');
 } else if (weather === 'snowy') {
@@ -83,7 +86,16 @@ if (weather === 'sunny') {
     console.log('Wear Whatever');
 }
 
-//
+//condition ? if true - do this : if not true - do this
+// (condition) {tru do this} else {do this}
+
+
+
+4 == '4' ? console.log('matches') : console.log('not Matches');
+
+
+
+
 let myAge = 21,
     actualAge = 21;
 
@@ -122,9 +134,9 @@ whatIsMyGrade(lizzy);
 whatIsMyGrade(bruno);
 
 
-*/
 
 // = vs == vs ===
+
 
 let myVar = 9;
 console.log(myVar);
@@ -134,3 +146,41 @@ if (1 == '1') {
 } else {
     console.log('not hungry')
 }
+*/
+
+
+//ifelse3rd
+
+
+let number = 50;
+
+function checkGrade(num) {
+    num >= 90 ? console.log('A')
+        : num >= 80 ? console.log('B')
+            : num >= 70 ? console.log('C')
+                : num >= 60 ? console.log('D')
+                    : console.log('you failed');
+
+}
+
+
+//swich statements
+
+let grade = 'Z';
+switch (grade) {
+    case 'A':
+        console.log("A");
+        break;
+    case 'B':
+        console.log("B");
+        break;
+    case 'C':
+        console.log('C');
+        break;
+    case 'D':
+        console.log('D');
+        break;
+    default:
+        console.log('please enter a grade');
+}
+
