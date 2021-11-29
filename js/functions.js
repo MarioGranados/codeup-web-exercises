@@ -193,20 +193,48 @@ function isThree(input) {
         console.log(input + ' is not equal to three');
     }
 }
+
 isThree(number);
+
 // - Make a function named `isMultipleOfThree(input)`
-function isMultipleOfThree(input){
-    if (input % 3 === 0){
+function isMultipleOfThree(input) {
+    if (input % 3 === 0) {
         console.log(input + 'is multiple of Three');
-    }
-    else {
+    } else {
         console.log(input + ' is not a multiple of three');
     }
 }
+
 // - Make a function named `isMultipleOfThreeAndFive(input)`
+function isMultipleOfThreeAndFive(number) {
+    if (number % 5 === 0 && number % 3 === 0) {
+        console.log('number is multiple of five AND three');
+    } else {
+        console.log('number is not a multiple of five AND Three');
+    }
+
+}
+
 // - Make a function named `isMultipleOf(target, n)` which checks if target is
+function isMultipleOf(target, n) {
+    if (target % n === 0) {
+        console.log('number is divisible by ' + n);
+    }
+}
+
 // evenly divisible by `n`
+var n = 5;
+isMultipleOf(number, n);
+
 // - Make a function named `isTrue(boolean)`
+function isTrue(bool) {
+    if (bool === true) {
+        console.log(bool);
+    }
+    else console.log(false);
+}
+
+isTrue(boolean);
 // - Make a function named `isFalse(boolean)`
 // - Make a function named `isTruthy(input)`, remember that values other than true
 // will behave like true
