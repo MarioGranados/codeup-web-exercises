@@ -62,6 +62,75 @@ console.log(a + " * " + b + " = " + productOfTwoNum(a, b));
 console.log(a + " / " + b + " = " + dividendOfTwoNum(a, b));
 console.log(a + " % " + b + " = " + remainderOfTwoNum(a, b));*/
 
+//Conditionals
+
+//In plain English, what would change in your outfit if it were: sunny vs rainy vs snowy
+
+//I would wear a jacket if its snowy, take an umbrella if it were raining, if its sunny I would dress normal.
+let weather = 'sunny',
+    outfit;
+
+//if statement
+// if weather is funny,wear a shirt
+/*
+if (weather === 'sunny') {
+    console.log('Wear a shirt');
+} else if (weather === 'snowy') {
+    console.log('Wear a Sweater');
+} else if (weather === 'snowy') {
+    console.log("bring an umbrella");
+} else {
+    console.log('Wear Whatever');
+}
+
+//
+let myAge = 21,
+    actualAge = 21;
+
+function checkAge(givenAge, realAge) {
+//if/else
+    if (myAge === actualAge) {
+        console.log('yes this is my actual age');
+    } else {
+        console.log('no this is not my age');
+    }
+}
+
+checkAge(myAge, actualAge);
+
+function whatIsMyGrade(grade) {
+    if (grade <= 100 && grade >= 90) {
+        console.log(' your grade is an A');
+    } else if (grade >= 80) {
+        console.log(' your grade is a B');
+    } else if (grade >= 70) {
+        console.log(' your grade is a C');
+    } else if (grade >= 60) {
+        console.log(' your grade is a D');
+    } else {
+        console.log(' you failed, try next time');
+    }
+}
+
+let edgar = 100, steve = 87, steph = 67, lizzy = 97, bruno = 0;
+
+console.log('these are the grades');
+whatIsMyGrade(edgar);
+whatIsMyGrade(steve);
+whatIsMyGrade(steph);
+whatIsMyGrade(lizzy);
+whatIsMyGrade(bruno);
 
 
+*/
 
+// = vs == vs ===
+
+let myVar = 9;
+console.log(myVar);
+
+if (1 == '1') {
+    console.log("i'm hungry");
+} else {
+    console.log('not hungry')
+}
