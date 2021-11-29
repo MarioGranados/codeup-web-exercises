@@ -174,14 +174,16 @@ function plusHundred(num) {
 function isPositive(num) {
     if (num > 0) {
         return ('number is positive');
-    } else {
+    } else if (num < 0) {
         return ('number is negative');
+    } else {
+        return ('number is 0');
     }
 }
 
 if (yes) {
     var userNumber = Number(prompt('enter a number'));
-
+    //the if below just checks if the user enters a number or anything else
     if (userNumber === parseInt(userNumber)) {
         console.log('you entered ' + userNumber);
         alert(isOdd(userNumber));
