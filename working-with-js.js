@@ -137,3 +137,14 @@ var username = 'codeup',
 
 console.log(passMaxLength === password.length && userIn != username); // false
 console.log(20 >= username.length); // true
+
+
+function reverseString(string) {
+    return string.split("").reverse("").join("");
+}
+
+//morning excersice
+console.log(
+    reverseString('hello')
+);
+
