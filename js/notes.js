@@ -187,7 +187,7 @@ switch (grade) {
 ///Morning asignmnent
 
 let bowling = function (score1, score2, score3) {
-    return score1 + score2 + score3 / 3;
+    return (score1 + score2 + score3) / 3;
 }
 
 let scores = function (bestScore) {
@@ -201,12 +201,14 @@ let returnTypeOf = function (x) {
     return typeof (x);
 }
 
-function executeAllFunctions(average, bestScore, string, x) {
+function executeAllFunctions(average, bestScore, string, a, b, c, d) {
     console.log(average);
     console.log(bestScore);
     console.log(string);
-    console.log(x);
-
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
 }
 
 let score = 109;
@@ -215,7 +217,7 @@ let isBowlingFun = true;
 let players = ['tom', 'jerry', 'garfield'];
 
 executeAllFunctions(
-    bowling(10, 10, 10),
+    bowling(45, 39, 88),
     scores(20),
     lowerCaseSplit('wHo Let The DOGgos out?'),
     returnTypeOf(score),
@@ -239,3 +241,17 @@ function thatsNotMyName(name) {
 }
 
 console.log(thatsNotMyName('Laura', 'Something'));
+
+
+function giveMe5() {
+    return 5;
+}
+
+
+function showfive(num) {
+    console.log(num);
+}
+
+var storage = giveMe5();
+
+showfive(storage);

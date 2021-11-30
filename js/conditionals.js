@@ -180,11 +180,11 @@ function isPositive(num) {
         return ('number is 0');
     }
 }
-
+//if user selects ok then functions execute, if not then we return a message
 if (yes) {
     var userNumber = Number(prompt('enter a number'));
     //the if below just checks if the user enters a number or anything else
-    if (userNumber === parseInt(userNumber)) {
+    if (parseInt(userNumber)) {
         console.log('you entered ' + userNumber);
         alert(isOdd(userNumber));
         alert(plusHundred(userNumber));
