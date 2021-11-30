@@ -184,3 +184,58 @@ switch (grade) {
         console.log('please enter a grade');
 }
 
+///Morning asignmnent
+
+let bowling = function (score1, score2, score3) {
+    return score1 + score2 + score3 / 3;
+}
+
+let scores = function (bestScore) {
+    return (bestScore % 3 === 0 || bestScore % 5 === 0);
+}
+let lowerCaseSplit = function (str) {
+    str = str.toLowerCase().split('')
+    return str;
+}
+let returnTypeOf = function (x) {
+    return typeof (x);
+}
+
+function executeAllFunctions(average, bestScore, string, x) {
+    console.log(average);
+    console.log(bestScore);
+    console.log(string);
+    console.log(x);
+
+}
+
+let score = 109;
+let name = 'bowling is fun';
+let isBowlingFun = true;
+let players = ['tom', 'jerry', 'garfield'];
+
+executeAllFunctions(
+    bowling(10, 10, 10),
+    scores(20),
+    lowerCaseSplit('wHo Let The DOGgos out?'),
+    returnTypeOf(score),
+    returnTypeOf(name),
+    returnTypeOf(isBowlingFun),
+    returnTypeOf(players)
+);
+
+let myFunction = function (firstName, lastName) {
+
+    return firstName + '' + lastName;
+}
+
+
+function thatsNotMyName(name) {
+    if (name == 'Laura') {
+        return "that's me!, I'm " + name;
+    } else {
+        return "that's not my name";
+    }
+}
+
+console.log(thatsNotMyName('Laura', 'Something'));
