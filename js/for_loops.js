@@ -1,8 +1,6 @@
 //NOTES
 
 
-
-
 //Loops
 
 //While loops
@@ -85,10 +83,28 @@ console.log('password sucess!');*/
     console.log('my favorite number is ' + i);
 }*/
 
+/*let dozens = 0;
+
+//4 dozens
 
 
+for(let i = dozens; i <= 4; i++){
+    console.log('dozens: ' + dozens);
+    console.log(i);
+}*/
 
 
+//NESTED FOR LOOPS
+
+/*for(let counter = 1; counter <=5; counter++){
+    console.log('first counter: ' + counter);
+    for(let counterTwo = 5; counterTwo > 0; counterTwo--) {
+        console.log('second counter: ' + counterTwo);
+    }
+}*/
+
+
+// -------------Exercises---------------
 
 /*function showMultiplicationTable(number) {
     for (let i = 0; i < 10; i++) {
@@ -109,23 +125,22 @@ for (let i = 0; i < 10; i++) {
     }
 }*/
 
-/*let str = "";
-for (let i = 0; i < 10; i++) {
-    for(let c = 0; c < i; c++) {
-
+let str = '';
+for(let i = 0; i< 10; i++) {
+    for(let c =0; c < i; c++) {
+        str += i + '';
     }
-}*/
+    str += '\n';
+}
+
+
+console.log(str);
+
+for(let num = 100; num > 0; num = num - 5){
+    console.log(num);
+}
 
 
 
-/*let num = prompt('Enter a number');
-let i = 0;
-while (i < 50) {
-    i++
-    if (num != i && num % 2 != 0) {
-        console.log(i);
-    } else {
-        console.log('breaking');
-        continue;
-    }
-}*/
+
+
