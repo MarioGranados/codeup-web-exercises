@@ -1,3 +1,5 @@
+//NOTES
+
 
 
 
@@ -84,3 +86,46 @@ console.log('password sucess!');*/
 }*/
 
 
+
+
+
+
+/*function showMultiplicationTable(number) {
+    for (let i = 0; i < 10; i++) {
+        console.log(
+            number + ' x ' + (i + 1) + ' = ' + (number * (i + 1)));
+    }
+}
+
+showMultiplicationTable(7);
+
+let num;
+for (let i = 0; i < 10; i++) {
+    num = Math.floor(Math.random() * (200 - 20 + 1) + 20);
+    if (num % 2 === 0) {
+        console.log(num + ' number is even');
+    } else {
+        console.log(num + ' number is odd');
+    }
+}*/
+
+/*let str = "";
+for (let i = 0; i < 10; i++) {
+    for(let c = 0; c < i; c++) {
+
+    }
+}*/
+
+
+
+/*let num = prompt('Enter a number');
+let i = 0;
+while (i < 50) {
+    i++
+    if (num != i && num % 2 != 0) {
+        console.log(i);
+    } else {
+        console.log('breaking');
+        continue;
+    }
+}*/

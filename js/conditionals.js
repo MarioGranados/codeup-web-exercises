@@ -1,3 +1,7 @@
+
+
+
+
 "use strict";
 
 /* ########################################################################## */
@@ -40,6 +44,10 @@ console.log(analyzeColor('hello'));
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
+
+
+
+
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
