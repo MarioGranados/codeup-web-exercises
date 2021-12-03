@@ -1,8 +1,8 @@
-let number = 2;
+/*let number = 2;
 while (number <= 65536) {
     console.log(number);
     number *= 2;
-}
+}*/
 
 //do while excersisce
 var allCones = Math.floor(Math.random() * 50) + 50;

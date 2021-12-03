@@ -113,9 +113,9 @@ for(let i = dozens; i <= 4; i++){
     }
 }
 
-showMultiplicationTable(7);
+showMultiplicationTable(7);*/
 
-let num;
+/*let num;
 for (let i = 0; i < 10; i++) {
     num = Math.floor(Math.random() * (200 - 20 + 1) + 20);
     if (num % 2 === 0) {
@@ -125,22 +125,37 @@ for (let i = 0; i < 10; i++) {
     }
 }*/
 
-let str = '';
+
+
+/*let str = '';
 for(let i = 0; i< 10; i++) {
+
     for(let c =0; c < i; c++) {
         str += i + '';
     }
+
     str += '\n';
 }
-
-
 console.log(str);
+*/
 
-for(let num = 100; num > 0; num = num - 5){
+
+
+/*for(let num = 100; num > 0; num -=  5){
     console.log(num);
+}*/
+
+
+
+
+
+/*let str = '',
+    newString = 'string';
+
+for(let c = 0; c < 10; c++) {
+    str += newString;
 }
-
-
+console.log(str);*/
 
 
 
