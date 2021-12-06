@@ -57,7 +57,7 @@
     shoppers.forEach(function (shopper) {
         if (shopper.amount > 200) {
             console.log('-----------------------------')
-            console.log(shopper.name + ' your total is ' + shopper.amount);
+            console.log(`${shopper.name} your total is  ${shopper.amount}`);
             shopper.amount = shopper.amount - (.12 * shopper.amount); //12 %
             console.log('after a 12% discount your new total is:  ' + shopper.amount);
         } else {
@@ -117,15 +117,13 @@
      *      ---
      *      ...
      */
-    let i = 1;
-    books.forEach(function (book) {
-        console.log('-----------------')
+    books.forEach(function (book, index) {
+        console.log('---')
         let name = book.author.firstName + ' ' + book.author.lastName;
-        console.log('Book Number ' + i);
+        console.log('Book Number ' + (index +1));
         console.log('author name: ' + name);
         console.log('book title:  ' + book.title);
-        console.log('----------------')
-        i++
+        console.log('---')
     });
 
     /**
@@ -142,20 +140,23 @@
     function createBook(title, firstName, lastName) {
         return {
             title: title,
-            firstName: firstName,
-            lastName: lastName
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            },
+            showBookInfo: function () {
+                console.log(`Title: ${this.title}`);
+                console.log(`Author: ${this.author.firstName} ${this.author.lastName}`);
+                console.log('---')
+                return 'done';
+            }
         }
 
     }
 
+    const newBook = createBook('who let the dogs out?', 'le good', 'boiii');
 
-    function showBookInfo(obj) {
-        console.log(obj);
-    }
-
-    let bookCollection = [];
-    bookCollection.push(createBook('The Devil Wears Prada', 'SpongeBob', 'SquarePants'));
-    bookCollection.push(createBook('..No This is Patrick', 'Patrick', 'Stary'));
+    console.log(newBook.showBookInfo());
 
 
 })();
