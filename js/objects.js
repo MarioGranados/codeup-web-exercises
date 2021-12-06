@@ -139,19 +139,24 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, firstName, lastName, showFunction) {
-        let book = {}
-        book.title = title;
-        book.firstName = firstName;
-        book.lastName = lastName;
+    function createBook(title, firstName, lastName) {
+        return {
+            title: title,
+            firstName: firstName,
+            lastName: lastName
+        }
 
-        showFunction(book);
     }
 
 
     function showBookInfo(obj) {
-        console.log('Title: ' + obj.title);
-        console.log('Author Name: ' + obj.firstName + ' ' + obj.lastName);
+        console.log(obj);
     }
-    createBook('of Mice and men', 'Darrel', 'Douglas', showBookInfo);
+
+    let bookCollection = [];
+    bookCollection.push(createBook('The Devil Wears Prada', 'SpongeBob', 'SquarePants'));
+    bookCollection.push(createBook('..No This is Patrick', 'Patrick', 'Stary'));
+
+    console.log(bookCollection);
+
 })();
