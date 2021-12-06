@@ -29,6 +29,8 @@
     console.log(planetsArray);
     planetsArray = planetsString.replaceAll('|', '<br>');
     console.log(planetsArray)
-    planetsArray = planetsString.replaceAll('<br>', '<ul>');
+    planetsArray = planetsString.replaceAll('<br>', '<ul><li></li></ul>');
+    console.log(planetsArray)
+
 
 })();
