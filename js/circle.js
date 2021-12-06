@@ -50,6 +50,24 @@
     //circle.logInfo(false);
     console.log(circle.logInfo(false));
     console.log("Circle information rounded to the nearest whole number");
-  //  circle.logInfo(true);
+    //  circle.logInfo(true);
     console.log(circle.logInfo(true));
+})();
+
+
+(function () {
+    let user = {
+        username: 'Mario',
+        password: 'Password',
+        verifyUser: function (name, pass) {
+            if (this.username === name && this.password === pass) {
+                return 'success';
+            } else {
+                return 'error';
+            }
+        }
+
+    };
+    console.log(user.verifyUser('Mario', 'Password'))
+
 })();

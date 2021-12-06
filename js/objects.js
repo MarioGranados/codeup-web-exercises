@@ -157,6 +157,5 @@
     bookCollection.push(createBook('The Devil Wears Prada', 'SpongeBob', 'SquarePants'));
     bookCollection.push(createBook('..No This is Patrick', 'Patrick', 'Stary'));
 
-    console.log(bookCollection);
 
 })();
