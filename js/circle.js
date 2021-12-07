@@ -71,3 +71,19 @@
     console.log(user.verifyUser('Mario', 'Password'))
 
 })();
+
+
+//
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+    const randomNumber = Math.random() * (max - min) + min;
+    return Math.floor(randomNumber);
+}
+
+console.log(getRandomArbitrary(5, 10))
+console.log(getRandomInt(5, 10))
+
