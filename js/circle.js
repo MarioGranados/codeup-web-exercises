@@ -3,7 +3,7 @@
 
     // create a circle object
     var circle = {
-        radius: 3,
+        radius: 5,
 
         getArea: function () {
             // TODO: complete this method
@@ -13,6 +13,7 @@
 
             // TODO: return the proper value
         },
+
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
@@ -31,6 +32,8 @@
             // console.log("Area of a circle with radius: " + this.radius + ", is: ");
         }
     };
+
+    console.log(`area of the circle is : ${circle.getArea()}`);
 
     // log info about the circle
     console.log("Raw circle information");
