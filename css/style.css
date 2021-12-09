@@ -1,8 +1,8 @@
+
 body {
     background-image: linear-gradient(rgba(37, 113, 239, .4), rgba(163, 37, 239, .4));
     color: black;
 }
-
 .fancy-header {
     color: purple;
     text-align: center;
@@ -33,5 +33,10 @@ table tr {
 .disclaimer {
     color: mediumvioletred;
     font-size: 15px;
+}
+
+img {
+    padding: 10px;
+    margin: 10px;
 }
 
