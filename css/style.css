@@ -1,9 +1,37 @@
-* {
-    background-color: rgb(30,30,30);
-    color: white;
+body {
+    background-image: linear-gradient(rgba(37, 113, 239, .4), rgba(163, 37, 239, .4));
+    color: black;
 }
 
 .fancy-header {
     color: purple;
+    text-align: center;
+}
+
+h1,h2,h3 {
     text-decoration: underline;
 }
+
+ul {
+    list-style-type: lower-latin;
+}
+ol {
+    list-style-type: lower-greek;
+}
+
+table th {
+    padding: 20px 15px;
+    margin: 20px 15px;
+    border: 3px solid black;
+}
+
+table tr {
+    padding: 10px;
+    margin: 20px;
+
+}
+.disclaimer {
+    color: mediumvioletred;
+    font-size: 15px;
+}
+
