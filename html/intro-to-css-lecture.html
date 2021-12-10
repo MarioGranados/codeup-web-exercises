@@ -5,24 +5,62 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Notes</title>
     <style>
         /*identify the element you want to style*/
-
-        .purple {
-            color: mediumpurple;
+        div {
+            border: 3px solid black;
+        }
+        ul {
+            border: 2px solid blue;
+            margin: 5px;
+        }
+        ul a {
+            color: magenta;
+            text-decoration: none;
         }
 
-        #title {
+        #list-items  {
             color: green;
         }
+         #list-items a {
+             color: coral;
+             text-decoration: none;
+         }
+         .animals p{
+             border: 1px dotted magenta;
+             margin: 5px;
+             padding: 20px;
+             color: #aa0ef7;
+         }
+         ul a:hover, #list-items a:hover {
+             background-color: #0fb784;
+             transition: 2s;
+             text-decoration: underline;
+             border-radius: 2px;
+         }
+
 
     </style>
 </head>
 <body>
-    <h1 id="title">Heading</h1>
-    <p class="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro repudiandae saepe ullam!</p>
-    <hr>
-    <p id="orange">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi minima nostrum obcaecati possimus repellendus veritatis?</p>
+<a href="">Hello World</a>
+<a href="">Something</a>
+    <div class="animals">
+        <p id="plain-text">Lorem ipsum dolor sit amet.</p>
+        <ul>
+
+            <li><a href="#">dog</a></li>
+            <li><a href="#">cat</a></li>
+            <li><a href="#">fox</a></li>
+            <li><a href="#">turtle</a></li>
+        </ul>
+
+        <ul id="list-items">
+            <li><a href="#">Hello</a></li>
+            <li><a href="#">Whats up?</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>
