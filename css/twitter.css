@@ -86,7 +86,7 @@ a {
 }
 .who-to-follow {
     float: right;
-    width: calc(35% - 20%);
+    width: calc(40% - 20%);
 }
 
 .btn {
