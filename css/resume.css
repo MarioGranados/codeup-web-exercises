@@ -1,16 +1,26 @@
+:root {
+    --red: #E63946;
+    --honeyDew: #F1FAEE;
+    --ligthBlue: #A8DADC;
+    --navBarColor: #457B9D;
+    --darkBlue: #1D3557;
+  }
+
  * {
      margin: 0;
      padding: 0;
+     font-family: 'Josefin Sans', sans-serif;
 
  }
 
  nav {
      width: 100%;
-     background-color: #848487;
+     background-color: var(--navBarColor);
  }
  .nav_container {
     display: flex;
-     justify-content: space-between;
+    justify-content: space-between;
+    height: 5vh;
  }
  .nav_section {
      display: flex;
@@ -18,35 +28,117 @@
      justify-content: space-between;
  }
 nav .nav_items {
-     background-color: white;
-     border: solid black 2px;
      text-decoration: none;
      padding: 10px;
+     transition: 250ms;
  }
 
 nav .nav_items:hover {
-    background-color: black;
+    background-color: var(--red);
     cursor: pointer;
+    transition: 250ms;
 }
 
 nav .nav_items a {
     padding: 10px;
+    text-decoration: none;
 }
  /*Main Part here*/
 
 
  .main_container {
-     height: 100vh;
-     background-color: #D2CFF6;
+     background-color: var(--honeyDew);
  }
 
  .main_section {
      display: flex;
      align-items: center;
      justify-content: space-around;
+     height: 95vh;
  }
 
  .section_content {
-     border: 1px solid black;
      margin-top: 25vh;
  }
+
+ .opposite {
+    background-color: var(--ligthBlue);
+    color: var(--honeyDew);
+    height: 100vh;
+ }
+
+
+ /*Footer section*/
+
+ footer {
+    width: 100%;
+    background-color: var(--darkBlue);
+    color: black;
+    position: relative;
+ }
+
+
+ /*form section*/
+
+ form input , form textarea {
+     width: 100%;
+     border-radius: 5px;
+     margin: 5px 0;
+     font-size: 15px;
+    padding: 5px;
+ }
+
+
+form button {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: var(--navBarColor);
+    color: white;
+    border-radius: 5px;
+    border: solid 1px var(--ligthBlue);
+    transition: 250ms;
+
+}
+form button:hover {
+    font-size: 20px;
+    background-color: var(--red);
+    transition: 250ms;
+}
+
+footer h4 {
+    font-size: 25px;
+    color: var(--honeyDew);
+}
+
+/*footer continued...*/
+
+ .footer_section {
+     display: flex;
+     justify-content: space-between;
+
+ }
+
+.footer_section_col {
+    margin: auto;
+}
+
+.footer_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 25px 0px;
+}
+
+footer a {
+    color: var(--red);
+    transition: 150ms;
+    text-decoration: none;
+    font-size: 20px;
+}
+footer a:hover {
+    color: var(--ligthBlue);
+    transition: 250ms;
+    font-size: 25px;
+}
