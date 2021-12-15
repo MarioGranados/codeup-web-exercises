@@ -1,9 +1,9 @@
 :root {
-    --red: #E63946;
-    --honeyDew: #F1FAEE;
-    --ligthBlue: #A8DADC;
-    --navBarColor: #457B9D;
-    --darkBlue: #1D3557;
+    --headers: #DA4167;
+    --light-bg: #93B5C6;
+    --dark-bg: #22223B;
+    --navBarColor: #80FFE8;
+    --footer: #ADACB5;
   }
 
  * {
@@ -34,7 +34,7 @@ nav .nav_items {
  }
 
 nav .nav_items:hover {
-    background-color: var(--red);
+    background-color: var(--headers);
     cursor: pointer;
     transition: 250ms;
 }
@@ -43,27 +43,66 @@ nav .nav_items a {
     padding: 10px;
     text-decoration: none;
 }
+
+
  /*Main Part here*/
 
 
  .main_container {
-     background-color: var(--honeyDew);
+     background-color: var(--light-bg);
  }
+
 
  .main_section {
      display: flex;
      align-items: center;
-     justify-content: space-around;
+     justify-content: space-evenly;
+     width: 80%;
+     margin: auto;
      height: 95vh;
+
  }
 
- .section_content {
-     margin-top: 25vh;
+
+
+ main .btn , main .btn_opposite {
+     background-color: var(--navBarColor);
+     color: var(--dark-bg);
+     font-size: 20px;
+     padding: 5px;
+     border-radius: 10px;
+     transition: 250ms;
+     margin-top: 10px;
+     border: none;
+     width: 20%;
+ }
+ main .btn:hover {
+     font-size: 22px;
+     background-color: var(--headers);
+
  }
 
+ main .btn_opposite {
+     background-color: var(--headers);
+ }
+
+ main .btn_opposite:hover {
+     font-size: 22px;
+     background-color: var(--navBarColor);
+ }
+ main img {
+     height: 75%;
+     width: 75%;
+ }
+
+ /*This is the inverse of the previous section*/
+
+.main_container_opposite {
+    background-color: var(--dark-bg);
+}
  .opposite {
-    background-color: var(--ligthBlue);
-    color: var(--honeyDew);
+     width: 80%;
+    color: var(--light-bg);
     height: 100vh;
  }
 
@@ -72,7 +111,7 @@ nav .nav_items a {
 
  footer {
     width: 100%;
-    background-color: var(--darkBlue);
+    background-color: var(--footer);
     color: black;
     position: relative;
  }
@@ -94,22 +133,22 @@ form button {
     text-align: center;
     font-size: 15px;
     cursor: pointer;
-    background-color: var(--navBarColor);
+    background-color: var(--headers);
     color: white;
     border-radius: 5px;
-    border: solid 1px var(--ligthBlue);
+    border: solid 1px var(--dark-bg);
     transition: 250ms;
 
 }
 form button:hover {
     font-size: 20px;
-    background-color: var(--red);
+    background-color: var(--headers);
     transition: 250ms;
 }
 
 footer h4 {
     font-size: 25px;
-    color: var(--honeyDew);
+    color: var(--headers);
 }
 
 /*footer continued...*/
@@ -132,13 +171,13 @@ footer h4 {
 }
 
 footer a {
-    color: var(--red);
+    color: var(--dark-bg);
     transition: 150ms;
     text-decoration: none;
     font-size: 20px;
 }
 footer a:hover {
-    color: var(--ligthBlue);
+    color: var(--headers);
     transition: 250ms;
     font-size: 25px;
 }
