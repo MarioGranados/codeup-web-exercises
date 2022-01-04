@@ -27,10 +27,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Menu</a>
             </li>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Addresses Near You</button>
-            </form>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Addresses Near You
+                    </button>
+                </form>
+            </li>
         </ul>
         <a class="nav-item nav-link" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -58,15 +61,15 @@
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-               aria-selected="true">Home</a>
+               aria-selected="true">Size and Crust</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-               aria-selected="false">Profile</a>
+               aria-selected="false">Cheese and Sauce</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-               aria-selected="false">Contact</a>
+               aria-selected="false">Toppings</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -140,6 +143,10 @@
                                 </ul>
                             </div>
                         </div>
+                        <!--footer for tabs-->
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary float-right">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,7 +209,12 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary float-right">Next</button>
+                        </div>
                     </div>
+                    <!--footer for tabs-->
+
                 </div>
             </div>
         </div>
@@ -215,6 +227,7 @@
                         <div class="card-header bg-primary badge-primary">
                             Choose Toppings
                         </div>
+
                         <!--tab body starts here-->
                         <!--this contains a card-->
                         <div class="card-body">
@@ -226,30 +239,31 @@
                                     <!--list item with radio buttons in each-->
                                     <li class="list-group-item">
                                         <!--radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="beef" id="beef">
+                                        <label class="form-check-label" for="beef">
+                                            Beef
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="ham" id="ham">
+                                        <label class="form-check-label" for="ham">
+                                            Ham
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="phillySteak"
+                                               id="phillySteak">
+                                        <label class="form-check-label" for="phillySteak">
+                                            Philly Steak
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="bacon" id="bacon">
+                                        <label class="form-check-label" for="bacon">
+                                            Bacon
                                         </label>
                                     </li>
                                 </ul>
@@ -263,37 +277,45 @@
                                     <!--list item with radio buttons in each-->
                                     <li class="list-group-item">
                                         <!--radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="greenPeppers"
+                                               id="greenPeppers">
+                                        <label class="form-check-label" for="greenPeppers">
+                                            Green Peppers
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="mushrooms"
+                                               id="mushrooms">
+                                        <label class="form-check-label" for="mushrooms">
+                                            Mushrooms
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="onions" id="onions">
+                                        <label class="form-check-label" for="onions">
+                                            Onions
                                         </label>
                                     </li>
                                     <li class="list-group-item">
                                         <!--Radio button-->
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
-                                            Default checkbox
+                                        <input class="form-check-input" type="checkbox" value="jalapeno" id="jalapeno">
+                                        <label class="form-check-label" for="jalapeno">
+                                            Jalapeno Peppers
                                         </label>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                        <!--footer for tabs-->
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary float-right">Next</button>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
