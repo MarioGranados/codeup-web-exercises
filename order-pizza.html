@@ -8,11 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./custom.css">
 
     <title>Order Pizza</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 border-bottom">
     <a class="navbar-brand" href="#">Pizza World</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,13 +47,12 @@
         </a>
     </div>
 </nav>
-<main class="container">
+<main class="container mb-2">
 
     <!--background image-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 class="display-4">Welcome To Pizza World!</h1>
         </div>
     </div>
 
@@ -60,21 +60,21 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            <a class="nav-link active" id="crust_tab" data-toggle="tab" href="#crust" role="tab" aria-controls="crust"
                aria-selected="true">Size and Crust</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            <a class="nav-link" id="sauces_tab" data-toggle="tab" href="#sauces" role="tab" aria-controls="sauces"
                aria-selected="false">Cheese and Sauce</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            <a class="nav-link" id="toppings_tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings"
                aria-selected="false">Toppings</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <!--first Tab-->
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active" id="crust" role="tabpanel" aria-labelledby="cheese_tab">
             <!--This is the main container for the tabs, the one with the blue header-->
             <div class="card">
                 <div class="card-body">
@@ -85,7 +85,7 @@
                         <!--tab body starts here-->
                         <!--this contains a card-->
                         <div class="card-body">
-                            <div class="card" style="width: 100%;">
+                            <div class="card mb-4" style="width: 100%;">
                                 <div class="card-header">
                                     Hand Tossed
                                 </div>
@@ -144,15 +144,15 @@
                             </div>
                         </div>
                         <!--footer for tabs-->
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary float-right">Next</button>
+                        <div class="card-footer d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary">Next</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--second Tab-->
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade" id="sauces" role="tabpanel" aria-labelledby="sauces_tab">
             <!--This is the main container for the tabs, the one with the blue header-->
             <div class="card">
                 <div class="card-body">
@@ -163,7 +163,7 @@
                         <!--tab body starts here-->
                         <!--this contains a card-->
                         <div class="card-body">
-                            <div class="card" style="width: 100%;">
+                            <div class="card mb-4" style="width: 100%;">
                                 <div class="card-header">
                                     Cheese
                                 </div>
@@ -209,8 +209,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-primary float-right">Next</button>
+                        <div class="card-footer d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary mx-1" href="#home">Prev</button>
+                            <button type="button" class="btn btn-primary" >Next</button>
                         </div>
                     </div>
                     <!--footer for tabs-->
@@ -219,7 +220,7 @@
             </div>
         </div>
         <!--third Tab-->
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings_tab">
             <!--This is the main container for the tabs, the one with the blue header-->
             <div class="card">
                 <div class="card-body">
@@ -231,7 +232,7 @@
                         <!--tab body starts here-->
                         <!--this contains a card-->
                         <div class="card-body">
-                            <div class="card" style="width: 100%;">
+                            <div class="card mb-4" style="width: 100%;">
                                 <div class="card-header">
                                     Choose Meats
                                 </div>
@@ -310,7 +311,7 @@
                         </div>
                         <!--footer for tabs-->
                         <div class="card-footer">
-                            <button type="button" class="btn btn-primary float-right">Next</button>
+                            <button type="submit" class="btn btn-primary float-right">Submit Order</button>
                         </div>
                     </div>
 
@@ -331,6 +332,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+
+
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
