@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Order Pizza</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Addresses Near You</button>
+            </form>
+        </ul>
+        <a class="nav-item nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd"
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            Sign-Up
+        </a>
+    </div>
+</nav>
+<main class="container">
+
+    <!--background image-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
+
+    <!--tabs go here-->
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+               aria-selected="false">Profile</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+               aria-selected="false">Contact</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!--first Tab-->
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!--This is the main container for the tabs, the one with the blue header-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header bg-primary badge-primary">
+                            Choose Size and Crust
+                        </div>
+                        <!--tab body starts here-->
+                        <!--this contains a card-->
+                        <div class="card-body">
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Hand Tossed
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Garlic Season Crust With Buttery Taste</li>
+                                    <li class="list-group-item">
+                                        <!--Radio Button here-->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="crust"
+                                                   id="handTossedSmall" value="handTossedSmall" checked>
+                                            <label class="form-check-label" for="handTossedSmall">
+                                                Small ("10")
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <!--Second Radio-->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="crust" id="handTossedMed"
+                                                   value="handTossedMed" checked>
+                                            <label class="form-check-label" for="handTossedMed">
+                                                Medium ("12")
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--another card is added the tab body-->
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Crispy Thin
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Think enough for optimum crispy to crunchy ratio</li>
+                                    <li class="list-group-item">
+                                        <!--Radio Button here-->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="crust" id="thinCrustMed"
+                                                   value="ThinCrustMed" checked>
+                                            <label class="form-check-label" for="thinCrustMed">
+                                                Medium ("12")
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <!--Second Radio Here-->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="crust"
+                                                   id="thinCrustLarge" value="ThinCrustLarge" checked>
+                                            <label class="form-check-label" for="thinCrustLarge">
+                                                Large ("14")
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--second Tab-->
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <!--This is the main container for the tabs, the one with the blue header-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header bg-primary badge-primary">
+                            Choose Cheese and Sauce
+                        </div>
+                        <!--tab body starts here-->
+                        <!--this contains a card-->
+                        <div class="card-body">
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Cheese
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <!--selector dropdown-->
+                                        <label for="cheeseAmount">How Much?</label>
+                                        <select class="form-control" id="cheeseAmount">
+                                            <option>Light</option>
+                                            <option selected>Regular</option>
+                                            <option>Extra</option>
+                                            <option>Double</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--another card is added the tab body-->
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Sauce
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <!--selector dropdown-->
+                                        <label for="sauceType">What Type of Sauce?</label>
+                                        <select class="form-control" id="sauceType">
+                                            <option>Tomato Sauce</option>
+                                            <option selected>Marinara Sauce</option>
+                                            <option>BBQ Sauce</option>
+                                            <option>Alfredo Sauce</option>
+                                        </select>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <!--selector dropdown-->
+                                        <label for="sauceAmount">How Much?</label>
+                                        <select class="form-control" id="sauceAmount">
+                                            <option>Light</option>
+                                            <option selected>Regular</option>
+                                            <option>Extra</option>
+                                            <option>Double</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--third Tab-->
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <!--This is the main container for the tabs, the one with the blue header-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header bg-primary badge-primary">
+                            Choose Size and Crust
+                        </div>
+                        <!--tab body starts here-->
+                        <!--this contains a card-->
+                        <div class="card-body">
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Hand Tossed
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Garlic Season Crust With Buttery Taste</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <!--another card is added the tab body-->
+                            <div class="card" style="width: 100%;">
+                                <div class="card-header">
+                                    Hand Tossed
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Garlic Season Crust With Buttery Taste</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
