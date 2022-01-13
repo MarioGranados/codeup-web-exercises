@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form name="login">
+<!--<form name="login">
     <div>
         <label for="username">Username</label>
         <input id="username" name="username" type="text">
@@ -21,18 +21,35 @@
     <div>
         <input type="submit" id="submit">
     </div>
-</form>
+</form>-->
+
+<!--event listener-->
+
+<h1>Hello World</h1>
+<p id="orange">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, totam!</p>
+
+
 <script>
     "use strict";
 
-    (function() {
+/*    (function() {
         var login = document.getElementsByName('login');
         // get the "username" input
         var usernameInput = document.forms.login.username;
 
         // log the value of the "username" input
         console.log(usernameInput.value);
-    })();
+    })();*/
+
+
+
+    let clicked = (e) => {
+        document.querySelector('#orange').style.color = 'orange';
+    }
+
+    document.querySelector('#orange').addEventListener('click', clicked);
+
+
 </script>
 
 </body>
