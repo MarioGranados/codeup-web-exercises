@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
     <style>
+        body {
+            display: block;
+            width: 80%;
+            margin: auto;
+        }
         button {
             background-color: blue;
             padding: 5px;
@@ -19,7 +24,6 @@
             border-radius: 8px;
             box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, .7);
             transition: 500ms;
-
         }
     </style>
 </head>
@@ -58,7 +62,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        let firstBtn = (e) => {
+        let firstBtn = () => {
             mainHeader.innerHTML = 'Javascript is Cool';
         }
         document.querySelector('#firstBtn').addEventListener('click', firstBtn);
@@ -67,7 +71,7 @@
         var subHeader = document.getElementById('sub-header')
 
         // TODO: Set the text color of subHeader to blue
-        let fourthBtn = (e) => {
+        let fourthBtn = () => {
             subHeader.style.color = 'blue';
         }
         document.querySelector('#fourthBtn').addEventListener('click', fourthBtn);
@@ -76,7 +80,7 @@
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        let secondBtn = (e) => {
+        let secondBtn = () => {
             for (var i = 0; i < listItems.length; i += 2) {
                 listItems[i].style.color = 'grey';
             }
@@ -84,7 +88,7 @@
         document.querySelector('#secondBtn').addEventListener('click', secondBtn);
         // TODO: Set text color of li with dbid = 1 to blue
 
-        let thirdBtn = (e) => {
+        let thirdBtn = () => {
             listItems[0].style.color = 'blue';
         }
         document.querySelector('#thirdBtn').addEventListener('click', thirdBtn);
@@ -95,6 +99,7 @@
             var subParagraphs = document.querySelector('.sub-paragraph');
             subParagraphs.innerHTML = 'Mission Accomplished';
         }
+
         document.querySelector('#fifthBtn').addEventListener('click', fifthBtn);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"

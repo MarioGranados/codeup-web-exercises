@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #circle {
+            background-color: blue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<span id="circle">Circle</span>
+
+<script>
+    let circle = document.getElementById('circle').style;
+    circle.position = 'absolute';
+    let newPosition = '0';
+    let position = circle.top;
+    let falling = false;
+
+    let setNewPosition = () => {
+        newPosition += 1;
+        return circle.top = newPosition
+    }
+
+    let fallingAnimation = () => {
+        for (let i = 0; i < 100; i++) {
+            if (position > 0) {
+                position = setNewPosition();
+                falling = true;
+            } else {
+                falling = false;
+            }
+        }
+    }
+    setInterval(fallingAnimation, 200);
+
+
+</script>
+
+</body>
+</html>
