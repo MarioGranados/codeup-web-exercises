@@ -15,17 +15,22 @@ console.log(USA);*/
 let sirius = {
     //properties
     numStudents: 29,
-    city: 'San Antonio',
+    city: [
+        'San Antonio', 'Houston',
+        ['downtown', 'rim', 'north control', 'museum district'],
+        'Dallas'
+    ],
     inPerson: false,
     theRest: true,
     //methods store functions
 
     returnCity: function () {
         //do something
-        console.log(8 +8);
-        console.log('hello World');
-        return this.city;
+        return this.city[2][2];
     }
 }
 
-console.log(sirius.inPerson);
+let city = sirius.returnCity();
+console.log(city);
+
+console.log(sirius.city[2][2]);
