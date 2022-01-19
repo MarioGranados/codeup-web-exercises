@@ -12,7 +12,7 @@ let USA = {
 console.log(USA);*/
 
 
-let sirius = {
+/*let sirius = {
     //properties
     numStudents: 29,
     city: [
@@ -33,4 +33,16 @@ let sirius = {
 let city = sirius.returnCity();
 console.log(city);
 
-console.log(sirius.city[2][2]);
+console.log(sirius.city[2][2]);*/
+
+let sports = ['spurs', 'mavericks', 'rockets', 'bucks'];
+
+sports.forEach(function (sport, index) {
+    if (sport.includes('r')) {
+        console.log(`${sport} is the  ${index + 1} element`);
+    }else {
+        console.log(sport);
+    }
+
+});
+
