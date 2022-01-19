@@ -35,7 +35,7 @@ console.log(city);
 
 console.log(sirius.city[2][2]);*/
 
-let sports = ['spurs', 'mavericks', 'rockets', 'bucks'];
+/*let sports = ['spurs', 'mavericks', 'rockets', 'bucks'];
 
 sports.forEach(function (sport, index) {
     if (sport.includes('r')) {
@@ -44,5 +44,4 @@ sports.forEach(function (sport, index) {
         console.log(sport);
     }
 
-});
-
+});*/
