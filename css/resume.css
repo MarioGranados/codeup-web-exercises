@@ -1,0 +1,224 @@
+:root {
+    --headers: #DA4167;
+    --light-bg: #93B5C6;
+    --dark-bg: #22223B;
+    --navBarColor: #80FFE8;
+    --footer: #ADACB5;
+  }
+
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: 'Josefin Sans', sans-serif;
+
+ }
+
+ nav {
+     width: 100%;
+     background-color: var(--navBarColor);
+     position: fixed;
+     transition: 250ms;
+     border-bottom: var(--headers) 1px solid
+ }
+
+.active {
+    background-color: var(--footer);
+    padding: 30px;
+    transition: 350ms;
+}
+
+ .nav_container {
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+ }
+ .nav_section {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+nav .nav_items {
+     text-decoration: none;
+     padding: 10px;
+     transition: 250ms;
+ }
+
+nav .nav_items:hover {
+    background-color: var(--headers);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+nav .nav_items a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+ /*Main Part here*/
+
+
+ .main_container {
+     background-color: var(--light-bg);
+ }
+
+
+ .main_section {
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     width: 80%;
+     margin: auto;
+     height: 95vh;
+
+ }
+
+.section_content h2 , .section_content h3 , .section_content p {
+    margin: 10px 0;
+}
+
+
+
+ main .btn , main .btn_opposite {
+     background-color: var(--navBarColor);
+     color: var(--dark-bg);
+     font-size: 20px;
+     padding: 5px;
+     border-radius: 10px;
+     transition: 200ms;
+     margin-top: 10px;
+     border: none;
+     width: 20%;
+ }
+ main .btn:hover {
+     font-size: 22px;
+     background-color: var(--headers);
+ }
+
+ main .btn_opposite {
+     background-color: var(--headers);
+ }
+
+ main .btn_opposite:hover {
+     font-size: 22px;
+     background-color: var(--navBarColor);
+ }
+ main img {
+     height: 75%;
+     width: 75%;
+ }
+
+ /*This is the inverse of the previous section*/
+
+.main_container_opposite {
+    background-color: var(--dark-bg);
+}
+ .opposite {
+     width: 80%;
+    color: var(--light-bg);
+    height: 100vh;
+ }
+
+
+ /*Footer section*/
+
+ footer {
+    width: 100%;
+    background-color: var(--footer);
+    color: black;
+    position: relative;
+ }
+
+
+ /*form section*/
+
+ form input , form textarea {
+     width: 100%;
+     border-radius: 5px;
+     margin: 5px 0;
+     font-size: 15px;
+    padding: 5px;
+ }
+
+
+form button {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: var(--headers);
+    color: white;
+    border-radius: 5px;
+    border: solid 1px var(--dark-bg);
+    transition: 250ms;
+
+}
+form button:hover {
+    font-size: 20px;
+    background-color: var(--headers);
+    transition: 250ms;
+}
+
+footer h4 {
+    font-size: 25px;
+    color: var(--headers);
+}
+
+/*footer continued...*/
+
+ .footer_section {
+     display: flex;
+     justify-content: space-between;
+
+ }
+
+.footer_section_col {
+    margin: auto;
+}
+
+.footer_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+
+footer a {
+    color: var(--dark-bg);
+    transition: 150ms;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+footer a:hover {
+    color: var(--headers);
+    transition: 250ms;
+    font-size: 25px;
+}
+/*media*/
+@media screen and (min-width: 200px) and (max-width: 600px) {
+
+    .main_section {
+        flex-direction: column;
+    }
+
+    .section_content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+
+    main .btn , main .btn_opposite {
+        width: 50%;
+        font-size: 25px;
+        padding: 5px;
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    nav {
+        position: relative;
+    }
+
+}

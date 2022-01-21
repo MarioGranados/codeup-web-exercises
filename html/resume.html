@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap" rel="stylesheet">
+    <title>Mario Granados</title>
+</head>
+<body>
+    <!--Nav Section Starts here-->
+    <nav id="navbar">
+        <div class="nav_container">
+        <div class="nav_section" >
+            <div class="nav_items"><a href="#">Home</a></div>
+            <div class="nav_items"><a href="#">Contact</a></div>
+            <div class="nav_items"><a href="#">About Me</a></div>
+        </div>
+        <div class="nav_section">
+            <div class="nav_items"><a href="#">Mario Granados</a></div>
+        </div>
+        <div class="nav_section">
+            <div class="nav_items"><a href="#">Github</a></div>
+            <div class="nav_items"><a href="#">LinkedIn</a></div>
+            <div class="nav_items"><a href="#">Instagram</a></div>
+        </div>
+        </div>
+    </nav>
+    <main>
+        <div class="main_container">
+
+            <div class="main_section">
+                <div class="section_content">
+                    <img src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png" alt="Photo of Me">
+
+                </div>
+                    <div class="section_content">
+                        <h2>Mario Granados</h2>
+                        <h3>Web Developer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Asperiores aut cum excepturi id ipsum itaque molestiae nihil quis unde voluptas!
+                        </p>
+                        <button class="btn" type="button">Button</button>
+                </div>
+            </div>
+            <!--This section will be the inverse of the section above-->
+            <div class="main_container_opposite">
+                <div class="main_section opposite">
+                    <div class="section_content">
+                        <h2>Mario Granados</h2>
+                        <h3>Web Developer</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Adipisci deleniti dolor illo non odit perspiciatis quam ratione temporibus tenetur voluptatem!
+                        </p>
+                        <button class="btn_opposite" type="button">Button</button>
+                    </div>
+                    <div class="section_content">
+                        <img src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png" alt="placeholder">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Then we will have another section just as the first one-->
+        <div class="main_container">
+            <div class="main_section">
+                <div class="section_content">
+                    <img src="https://blog.greendot.org/wp-content/uploads/sites/13/2021/09/placeholder-image.png" alt="Photo of Me">
+                </div>
+                <div class="section_content">
+                    <h2>Some Heading</h2>
+                    <h3>Sub Header</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Asperiores aut cum excepturi id ipsum itaque molestiae nihil quis unde voluptas!
+                    </p>
+                    <button class="btn" type="button">Button</button>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+    <footer>
+        <div class="footer_container">
+            <!--First Section of footer here-->
+            <div class="footer_section">
+                <div class="footer_section_col">
+
+                    <div class="footer_items">
+                      <h4>Follow Me!</h4>
+                    </div>
+
+                    <div class="footer_items">
+                        <a href="#">Github</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                    </div>
+
+                </div>
+
+                <div class="footer_section_col">
+                    <div class="footer_items">
+                        <h4>Contact Me</h4>
+                        <form action="">
+                            <input type="text" name="fname" id="fname" placeholder="First Name">
+                            <br>
+                            <input type="text" name="lname" id="lname" placeholder="Last Name">
+                            <br>
+                            <input type="email" name="Email" id="Email" placeholder="Enter.Email@example.com">
+                            <br>
+                            <input type="tel" name="phone" id="phone" placeholder="(000) 000-0000">
+                            <br>
+                            <textarea name="message" id="message" cols="30" rows="10">Mario, you're pretty cool and We would love to hire you. Please contact me as soon as possible!
+                            </textarea>
+                            <br>
+
+                            <button type="submit">Send Message</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr style="width: 80%; margin: auto;">
+            <br>
+
+            <!--second Section here-->
+            <div class="footer_section">
+            <div class="footer_section_col">
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+            </div>
+            <div class="footer_section_col">
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+            </div>
+            <div class="footer_section_col">
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+                <div class="footer_items"><a href="#">link</a></div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+<script>
+
+    /*The code that was commented out was before I began to experimenting with DOM*/
+/*    window.onscroll = function () {navChangeOnScroll()};
+
+    function navChangeOnScroll() {
+        if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById('navbar').style.position.fixed();
+            document.getElementById('navbar').style.backgroundColor = '#ADACB5';
+            document.getElementById('navbar').style.padding = '30px';
+        } else
+        {
+            document.getElementById('navbar').style.position.fixed();
+            document.getElementById('navbar').style.backgroundColor = '#80FFE8';
+            document.getElementById('navbar').style.padding = '0';
+        }
+    }*/
+
+    /*The following code adds an 'active' class to the navbar
+    * when you scroll.  */
+    window.onscroll = function () {navChangeOnScroll()}
+    function navChangeOnScroll() {
+        if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById('navbar').classList.add('active');
+        } else {
+            document.getElementById('navbar').classList.remove('active');
+        }
+    }
+</script>
+
+</body>
+</html>

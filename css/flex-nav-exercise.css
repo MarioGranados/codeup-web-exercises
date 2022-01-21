@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0BC9CD;
+
+}
+
+.nav_section {
+    display: flex;
+}
+
+.nav_section:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0;
+    text-align: center;
+}
+
+.nav_item {
+    padding: 4px 4px;
+    transition: 250ms;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: #616191;
+    font-weight: bold;
+}
+
+.nav_item:hover {
+    background-color: #47808e;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+/*footer section */
+
+
+footer {
+    margin: 0;
+    padding: 0;
+
+}
+footer p {
+    color: #8FBFE0;
+    font-size: 20px;
+}
+
+.footer_container {
+    background-color: #1D8A99;
+    height: 500px;
+
+}
+
+.footer_section {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.footer_section_items {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+.footer_section_items a {
+    text-decoration: none;
+    transition: 300ms;
+    color: #14FFF7;
+}
+.footer_section_items a:hover {
+    text-decoration: underline;
+    color: rgba(112, 0, 255, 0.72);
+    border-radius: 2px;
+    transition: 300ms;
+    font-size: 20px;
+}
+
+.footer_menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+footer h5 {
+    color: #14FFF7;
+    font-weight: bold;
+}
+
+.contact_me_section input {
+    width: 80%;
+    border-radius: 5px;
+    border: #D2CFF6 solid 2px;
+    background-color: #8FBFE0;
+    transition: 500ms;
+    margin-top: 10px;
+    height: 25px;
+}
+.contact_me_section input:hover {
+    width: 100%;
+    background-color: #7C77B9;
+    color: #14FFF7;
+    transition: 250ms;
+}
+
+
+.contact_me_section button {
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 50%;
+    color: #000000;
+    background-color: #14FFF7;
+    border: 3px solid rgba(15, 169, 165, 0.64);
+    transition: 200ms;
+}
+
+.contact_me_section button:hover {
+    background-color: #7C77B9;
+    border: 2px solid #444267;
+    transition: 250ms;
+    width: 55%;
+
+}

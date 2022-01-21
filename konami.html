@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <title>Konami Code</title>
+    <style>
+        .bg-image {
+            background-image: linear-gradient(rgba(84, 6, 6, 0.9), rgba(157, 22, 22, 0.45)), url("https://i.pinimg.com/736x/2d/93/06/2d9306493615a093eeaf76f64fa7e157.jpg");
+        }
+        .hidden {
+            display: none;
+            transition: 500ms;
+        }
+
+    </style>
+</head>
+<body>
+<div class="jumbotron bg-danger" id="locked">
+    <h1 class="display-4 text-center text-white">Konami Code</h1>
+    <p class="lead text-center">Enter the Konami code</p>
+    <p class="lead text-center text-info">
+        W = Up
+        S = Down
+        A = Left
+        D = Right
+        'Enter' = End;
+    </p>
+    <hr class="my-4">
+    <p class="text-center">This site is locked until you enter the secret code.</p>
+    <p id="Current_Key" class="text-white"></p>
+    <div class="div justify-content-center d-flex">
+        <a class="btn btn-primary btn-lg"
+           href="https://www.howtogeek.com/659611/what-is-the-konami-code-and-how-do-you-use-it/#:~:text=Up%2C%20Up%2C%20Down%2C%20Down,cheats%20that%20help%20you%20win."
+           role="button">Learn more</a>
+    </div>
+
+</div>
+
+<!--hidden stuff here-->
+<div class="hidden" id="hidden">
+    <nav class="navbar navbar-light bg-danger">
+        <a class="navbar-brand" href="#">
+            <img src="https://thumbs.dreamstime.com/z/cartoon-mexican-taco-character-funny-mustache-saying-hola-hello-spanish-cute-food-restaurant-mascot-vector-illustration-144220424.jpg"
+                 width="30" height="30" class="d-inline-block align-top" alt="">
+            Taco Land
+        </a>
+    </nav>
+    <div class="bg-image">
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid bg-dark">
+                <div class="container">
+                    <h1 class="display-4 text-danger">Welcome To Taco Land</h1>
+                    <p class="lead text-white">We know the best Taco places in Town</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-columns">
+                <div class="card bg-dark text-white">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8MWUo1JSbHDkHOEKSovfAFuT5gdL9-E_GNg&usqp=CAU" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Asados</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="card p-3 bg-dark text-white">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card bg-dark">
+                    <img src="https://render.fineartamerica.com/images/rendered/search/canvas-print/6.5/8/mirror/break/images-medium-5/tia-rosa-time-marilyn-smith-canvas-print.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Taco-n-Madre</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis,
+                            incidunt!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white text-center p-3">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <footer class="blockquote-footer text-white">
+                            <small>
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card text-center">
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title text-danger">Los Dos Burritos</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card bg-dark">
+                    <img src="https://previews.123rf.com/images/viaire/viaire1702/viaire170200044/72377482-the-hand-drawing-inscription-happiness-is-a-taco-of-black-ink-on-a-white-background-with-image-flat-.jpg" class="card-img" alt="...">
+                </div>
+                <div class="card p-3 text-right bg-dark text-white">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title text-danger">Taco Stand</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, sed.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="jumbotron bg-dark">
+                <h1 class="display-4 text-danger text-right">Who we are?</h1>
+                <p class="lead text-white text-right">We are Taco Connesuirs, We strive to find only the best Taco Stands and
+                    Restaurants in you area.</p>
+                <hr class="my-4 text-white">
+                <p class="text-white text-right">We also Destroy the weak Taco stands, to ensure the health and safety of
+                    humankind. Let's be honest, no one wants to eat bad mexican food</p>
+            </div>
+        </div>
+        <div class="jumbotron bg-danger">
+            <h1 class="display-4 ">Contact</h1>
+            <hr class="my-4 text-white">
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    // up = 87 down = 83 right = 68 left = 65
+    // A = 65
+    // B = 66
+    // Enter = 13
+    // key = 8787838365686568666513 = WWSSADADBA + ENTER;
+
+    let key = '';
+    let enteredKey = $('#Current_Key');
+    let hidden = $(".hidden");
+    let locked = $('#locked');
+
+    $(document).keyup(function (event) {
+        key += event.keyCode;
+        enteredKey.text(key); // displays key
+    });
+
+    $(document).bind('keypress', function (e) {
+        if (key.includes('87878383656865686665')) {
+            console.log('success');
+            hidden.css('display', 'unset');
+            locked.css('display', 'none');
+        } else {
+            console.log('error');
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
