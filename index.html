@@ -6,7 +6,6 @@
 <head>
     <title>Konami Code</title>
     <style>
-
         .bg-image {
             background-image: linear-gradient(rgba(84, 6, 6, 0.9), rgba(157, 22, 22, 0.45)), url("https://i.pinimg.com/736x/2d/93/06/2d9306493615a093eeaf76f64fa7e157.jpg");
         }
@@ -15,10 +14,6 @@
             display: none;
             transition: 500ms;
         }
-/*        .destroy {
-            position: absolute;
-            top: rand;
-        }*/
 
     </style>
 </head>
@@ -182,9 +177,34 @@
         key += event.keyCode;
         enteredKey.text(String.fromCharCode(event.keyCode)); // displays key
         if (key.includes('87878383656865686665') || key.includes('38384040373937396665')) {
+            key = '';
             console.log('success');
             audio.play();
-            setTimeout(loading, 1000);
+            setTimeout(loading, 2000);
+            setTimeout(function () {
+                setInterval((function (){
+                    let num = Math.floor(Math.random() * 10);
+                    let word = '';
+                    let word2 = '';
+                    if(num > 50 && num < 20) {
+                        word2 = 'left'
+                        word = 'top';
+                        destroy.css('position', 'absolute');
+                        destroy.css(word.toString(), num.toString() +'px');
+                        destroy.css(word2.toString(), num.toString() + '%');
+                        destroy.css('z-index', num.toString())
+                        console.log(num);
+                    } else {
+                        word2 = 'left'
+                        word = 'right';
+                        destroy.css('position', 'absolute');
+                        destroy.css(word2.toString(), num.toString() + '%')
+                        destroy.css(word.toString(), num.toString() + 'px' );
+                        console.log(num);
+                    }
+                }), 1000);
+            }, 8000);
+
 
         }
     });
@@ -192,11 +212,10 @@
     function loading() {
         hidden.css('display', 'unset');
         locked.css('display', 'none');
-
-        destroy.addClass('destroy');
         //rickRoll.play();
-
     }
+
+
 
 
 </script>
