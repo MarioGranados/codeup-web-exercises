@@ -8,14 +8,34 @@
     <title>JQuery</title>
 </head>
 <body>
+<h1 id="h1" class="codeup">Hello World</h1>
+
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, repellat.</p>
+
+<ul class="codeup">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<div id="container" class="codeup">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, ut?</p>
+</div>
 
 <script src="./js/jquery-2.2.4.js"></script>
 <script>
     "use strict"
     $(document).ready(function () {
         alert('Page Has Finished Loading');
-    });
 
+        $('.codeup').css('border', 'black solid 1px');
+
+        $('li').css('font-size', '20px');
+
+        $('h1, p, li').css({'background-color': "yellow"});
+
+    });
 </script>
 
 </body>
