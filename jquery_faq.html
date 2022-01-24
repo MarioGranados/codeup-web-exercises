@@ -31,12 +31,35 @@
             margin-bottom: 10px;
             background-color: rgba(255, 255, 0, 0.24);
         }
+        .highlight {
+            background-color: rgba(255, 255, 0, 0.36);
+        }
     </style>
 </head>
 <body>
 <main>
     <h1>Frequently Asked Questions</h1>
     <h2>National Parks</h2>
+
+    <ul>
+        <li><h3>Some Random Park</h3></li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+    </ul>
+    <ul>
+        <li><h3>Second random Park</h3></li>
+        <li>Lorem ipsum.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem?</li>
+    </ul>
+    <ul>
+        <li><h3>random</h3></li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ul>
+    <button id="highlight" type="submit">Button</button>
     <dl>
         <dt>Grand Canyon, Arizona</dt>
         <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis!</dd>
@@ -93,6 +116,11 @@
             e.preventDefault()
             $('dd').toggleClass('invisible');
         })
+
+        $('#highlight').click(function(e){
+            e.preventDefault();
+            $('ul li').children().css('background-color', 'blue');
+        });
 
     });
 
