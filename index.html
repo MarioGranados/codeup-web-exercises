@@ -181,31 +181,6 @@
             console.log('success');
             audio.play();
             setTimeout(loading, 2000);
-            setTimeout(function () {
-                setInterval((function (){
-                    let num = Math.floor(Math.random() * 10);
-                    let word = '';
-                    let word2 = '';
-                    if(num > 50 && num < 20) {
-                        word2 = 'left'
-                        word = 'top';
-                        destroy.css('position', 'absolute');
-                        destroy.css(word.toString(), num.toString() +'px');
-                        destroy.css(word2.toString(), num.toString() + '%');
-                        destroy.css('z-index', num.toString())
-                        console.log(num);
-                    } else {
-                        word2 = 'left'
-                        word = 'right';
-                        destroy.css('position', 'absolute');
-                        destroy.css(word2.toString(), num.toString() + '%')
-                        destroy.css(word.toString(), num.toString() + 'px' );
-                        console.log(num);
-                    }
-                }), 1000);
-            }, 8000);
-
-
         }
     });
 
@@ -214,8 +189,6 @@
         locked.css('display', 'none');
         //rickRoll.play();
     }
-
-
 
 
 </script>
