@@ -21,7 +21,7 @@
         }
     });*/
 
-    function isUpperOrLower (string) {
+/*    function isUpperOrLower (string) {
         for (let i = 0; i < string.length; i++) {
             if (string[i] === string[i].toUpperCase()) {
                 console.log(`${string[i]} is an uppercase Letter`);
@@ -34,7 +34,20 @@
     }
 
     let str = 'KlkaJFAwilAo'
-    isUpperOrLower(str);
+    isUpperOrLower(str);*/
+
+    let str = '42958372'; // = 40;
+    let str2 = '917485'
+
+    function addNumbersOnString(str) {
+        let total = 0;
+        for(var i = 0; i < str.length; i++) {
+            total += parseInt(str[i]);
+        }
+        return total;
+    }
+console.log(addNumbersOnString(str))
+console.log(addNumbersOnString(str2))
 
 
 
