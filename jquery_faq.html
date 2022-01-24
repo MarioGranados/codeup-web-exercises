@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        main {
+            width: 80%;
+            margin: auto;
+        }
+
+        dt {
+            font-weight: bolder;
+            margin-bottom: 5px;
+        }
+
+        dt:hover {
+            font-weight: bold;
+            color: blue;
+            cursor: pointer;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 0, 0.24);
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Frequently Asked Questions</h1>
+    <h2>National Parks</h2>
+    <dl>
+        <dt>Grand Canyon, Arizona</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis!</dd>
+
+        <dt>Petrified Forest, Arkansas</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi error quia rerum ullam. Repellendus?
+        </dd>
+
+        <dt>Death Valley, California</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis id illum necessitatibus.</dd>
+
+        <dt>Rocky Mountain, Colorado</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque earum eligendi explicabo labore, minima
+            nulla.
+        </dd>
+
+        <dt>Hawaii Volcanoes, Hawaii</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, exercitationem?</dd>
+
+        <dt>Yellowstone, Idaho</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quidem?</dd>
+
+        <dt>Great Basin, Nevada</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsum maxime nobis perspiciatis quos ratione
+            veniam.
+            Consequatur distinctio ea fugiat.
+        </dd>
+
+        <dt>Great Smoky Mountains, North Carolina</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatibus.</dd>
+
+        <dt>Guadalupe Mountains, Texas</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo illum natus odit porro repellat soluta totam
+            ullam, voluptatem. Sunt, voluptatibus?
+        </dd>
+
+        <dt>Shenadoah, Virginia</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore doloremque harum iure libero
+            perspiciatis.
+        </dd>
+
+    </dl>
+</main>
+
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function () {
+
+        let dd = $('dd');
+        dd.addClass('invisible');
+
+        $('dt').click(function (e){
+            e.preventDefault()
+            $('dd').toggleClass('invisible');
+        })
+
+    });
+
+
+</script>
+</body>
+</html>
