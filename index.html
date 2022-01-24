@@ -15,6 +15,12 @@
             transition: 500ms;
         }
 
+        .bg-static {
+            background-image: url("https://c.tenor.com/dxA2j-gsp4oAAAAC/glitch-static.gif");
+            z-index: 999;
+            background-position: center;
+        }
+
     </style>
 </head>
 <body>
@@ -175,8 +181,25 @@
 
     $(document).keyup(function (event) {
         key += event.keyCode;
-        enteredKey.text(String.fromCharCode(event.keyCode)); // displays key
-        if (key.includes('87878383656865686665') || key.includes('38384040373937396665')) {
+        switch (event.keyCode) {
+            case 38:
+                enteredKey.text('\u2191'); // displays up key
+                break;
+            case 40:
+                enteredKey.text('\u2193'); // displays down key
+                break;
+            case 37:
+                enteredKey.text('\u2190'); // displays left key
+                break;
+            case 39:
+                enteredKey.text('\u2192'); // displays right key
+                break;
+            default:
+                enteredKey.text(String.fromCharCode(event.keyCode)); // displays any key
+                break;
+
+        }
+        if (key.includes('38384040373937396665')) {
             key = '';
             console.log('success');
             audio.play();
@@ -187,7 +210,12 @@
     function loading() {
         hidden.css('display', 'unset');
         locked.css('display', 'none');
+        setTimeout(staticPage, 8000);
         //rickRoll.play();
+    }
+
+    function staticPage() {
+        $('*').addClass('bg-static');
     }
 
 
