@@ -123,8 +123,6 @@
             e.preventDefault()
             $('dd').toggleClass('invisible');
         })
-
-
         $("h3").click(function(event){
             event.preventDefault()
             $(this).next().children().css("font-weight", "bold");
@@ -133,15 +131,11 @@
             e.preventDefault();
             $(this).parent().children().first().css("background-color", "blue");
         })
-
         $('#highlight').click(function (e) {
             e.preventDefault();
             $('.list-group ul li:last-child').css('background-color', 'yellow');
         });
-
     });
-
-
 </script>
 </body>
 </html>
