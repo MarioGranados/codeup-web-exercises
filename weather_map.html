@@ -22,6 +22,8 @@
 </head>
 <body>
 <!-- As a link -->
+
+<!--navbar-->
 <nav class="navbar navbar-light bg-primary">
     <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -29,16 +31,34 @@
 
 </nav>
 
+<!--form to search address-->
 <div class="container">
-    <div class="card-deck" id="forecast">
-
-    </div>
+    <form class="my-4">
+        <div class="form-row">
+            <div class="col-4">
+                <input type="text" id="street" class="form-control" placeholder="Street" alt="Street Name">
+            </div>
+            <div class="col-3">
+                <input type="text" id="city" class="form-control" placeholder="City" alt="City">
+            </div>
+            <div class="col-2">
+                <input type="text" id="state" class="form-control" placeholder="State" alt="State">
+            </div>
+            <div class="col-2">
+                <input type="text" id="zip" class="form-control" placeholder="Zip" alt="Zipcode">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" id="searchAddress">Search</button>
+            </div>
+        </div>
+    </form>
 </div>
 
 
 <!-- The HTML element that serves as the Mapbox container -->
 
 <div class="container" id='map'></div>
+<div class="card-deck" id="forecast"><!--Were going to add stuff here via Jquery--></div>
 
 
 <!-- Mapbox JS -->
@@ -69,22 +89,47 @@
             zoom: 10,
             center: [-98.4916, 29.4252]
         });
+
         //if we need to search a new city, this will allow us to override the current city
-        let city = 'San Antonio, TX',
-            currentCity = city + ', US',
-            address = '600 Navarro ST #350,' + currentCity;
-        let lat = 0,
-            long = 0;
+        let city = 'San Antonio',
+            streetName = '600 Navarro ST #350',
+            state = 'TX',
+            zip = '78205',
+            address = streetName + ' ' + city + ' ' + state + ', ' + zip,
+            lat = 0,
+            long = 0,
+            latLong = 0;
 
         //add stuff to html, this will add all the info into cards via bootstrap
-        function appendToHTML(date, max, min, describe, speed, humidity) {
-            var myDate = new Date( date *1000);
-            console.log(myDate)
-            for (var i =0; i < myDate.length)
+        function appendToHTML(myDate, date, max, min, describe, speed, humidity) {
+            switch (myDate.getDay()) {
+                case 0:
+                    myDate = 'Sunday';
+                    break;
+                case 1:
+                    myDate = 'Monday';
+                    break;
+                case 2:
+                    myDate = 'Tuesday';
+                    break;
+                case 3:
+                    myDate = 'Wednesday';
+                    break;
+                case 4:
+                    myDate = 'Thursday';
+                    break;
+                case 5:
+                    myDate = 'Friday';
+                    break;
+                default:
+                    myDate = 'Saturday';
+                    break;
+            }
+
             var html =
                 `<div class="card" style="width: 18rem;">
                 <div class="card-header">
-                    ${date}
+                    ${myDate} <br> ${date}
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">High:${max} / Low:${min}</li>
@@ -96,25 +141,61 @@
             $('#forecast').append(html);
         }
 
-        //getting address
-        geocode(address, MAP_BOX).then(function (result) {
-            //console.log(result;)
-            lat = result[0];
-            long = result[1];
-        })
-        //JSON get request for the WEATHER API
+        $('#searchAddress').click((e) => {
+            e.preventDefault();
+            streetName = $('#street').val();
+            city = $('#city').val();
+            state = $('#state').val();
+            zip = $('#zip').val()
+            address = streetName + ' ' + city + ' ' + state + ', ' + zip;
 
+            //get lat and long
+            geocode(address, MAP_BOX).then(function (result) {
+                //move map to result address
+                /*                map.setCenter(result);
+                                map.setZoom(15);*/
+                lat = result[0];
+                long = result[1];
+
+                // Using easeTo options, according to documentation
+                map.easeTo({
+                    center: ([lat, long]),
+                    zoom: 15,
+                    speed: 0.8,
+                    curve: 1,
+                    duration: 2000,
+                    easing(t) {
+                        return t;
+                    }
+                });
+            });
+        })
+
+        //JSON get request for the WEATHER API
         let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&appid=${WEATHER_KEY}`
         $.get(api).done(function (data) {
-            console.log(data);
+            // console.log(data);
             $.each(data.daily, function (index, value) {
-                appendToHTML(value.dt, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
+                var myDate = new Date(value.dt * 1000);
+                //checking to see how date format is
+                /*                console.log(myDate);
+                                console.log(myDate.getDay());
+                                console.log(myDate.getDate())
+                                console.log(myDate.getMonth())*/
+
+                //set date to day / month format
+                var date = `${myDate.getMonth() + 1} / ${myDate.getDate()}`;
+
+                appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
                 //console.log(value);
+
 
             })
         }).fail(function () {
             alert('failed request from weather application');
-        })
+        });
+
+
     });
 </script>
 </body>
