@@ -6,17 +6,115 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map</title>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!--mapbox css-->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
+<!-- As a link -->
+<nav class="navbar navbar-light bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+    </div>
 
-<script src="./js/keys.js"></script>
+</nav>
+
+<div class="container">
+    <div class="card-deck" id="forecast">
+
+    </div>
+</div>
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+
+<div class="container" id='map'></div>
+
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+<!--JQuery-->
 <script src="./js/jquery-2.2.4.js"></script>
+<!--GeoCoder-->
 <script src="./js/mapbox-geocoder-utils.js"></script>
 
 <script>
     //after loaded document
-    $(document).ready(() =>{
+    $(document).ready(() => {
+        const WEATHER_KEY = ''
+        mapboxgl.accessToken = '';
+        const MAP_BOX = mapboxgl.accessToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252]
+        });
+        //if we need to search a new city, this will allow us to override the current city
+        let city = 'San Antonio, TX',
+            currentCity = city + ', US',
+            address = '600 Navarro ST #350,' + currentCity;
+        let lat = 0,
+            long = 0;
 
+        //add stuff to html, this will add all the info into cards via bootstrap
+        function appendToHTML(date, max, min, describe, speed, humidity) {
+            var myDate = new Date( date *1000);
+            console.log(myDate)
+            for (var i =0; i < myDate.length)
+            var html =
+                `<div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    ${date}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">High:${max} / Low:${min}</li>
+                    <li class="list-group-item">Forecast: ${describe}</li>
+                    <li class="list-group-item">Wind Speed: ${speed}mph</li>
+                    <li class="list-group-item">Humidity${humidity}%</li>
+                </ul>
+            </div>`;
+            $('#forecast').append(html);
+        }
+
+        //getting address
+        geocode(address, MAP_BOX).then(function (result) {
+            //console.log(result;)
+            lat = result[0];
+            long = result[1];
+        })
+        //JSON get request for the WEATHER API
+
+        let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&appid=${WEATHER_KEY}`
+        $.get(api).done(function (data) {
+            console.log(data);
+            $.each(data.daily, function (index, value) {
+                appendToHTML(value.dt, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
+                //console.log(value);
+
+            })
+        }).fail(function () {
+            alert('failed request from weather application');
+        })
     });
 </script>
 </body>
