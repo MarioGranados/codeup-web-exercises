@@ -210,6 +210,7 @@
                                 map.setZoom(15);*/
                 lat = result[0];
                 long = result[1];
+                $('#forecast').text('');
                 getWeatherInfo(long, lat);
                 // Using easeTo options, according to documentation
                 map.easeTo({
@@ -285,7 +286,7 @@
                 .setLngLat(coordinates)
                 .addTo(map)
             //removes marker on click
-            map.on('click', (e) => {
+            map.on('click', () => {
                 marker.remove();
             })
         }
