@@ -18,6 +18,9 @@
             width: 100%;
             height: 500px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -26,39 +29,50 @@
 <!--navbar-->
 <nav class="navbar navbar-light bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">WM</a>
     </div>
 
 </nav>
 
-<!--form to search address-->
-<div class="container">
-    <form class="my-4">
-        <div class="form-row">
-            <div class="col-4">
-                <input type="text" id="street" class="form-control" placeholder="Street" alt="Street Name">
+<div class="jumbotron">
+    <div id="hidden">
+        <h1 class="display-4 text-center">The Weather Map App</h1>
+        <p class="lead text-center">This app displays the weather forecast for the next 7 days in any desired location</p>
+        <hr class="my-4">
+        <p class="text-center">click anywhere on the map, or search any location by filling out the information below</p>
+    </div>
+    <!--form to search address-->
+    <div class="container">
+        <form class="my-5">
+            <div class="form-row">
+                <div class="col-4">
+                    <input type="text" id="street" class="form-control" placeholder="Street" alt="Street Name">
+                </div>
+                <div class="col-3">
+                    <input type="text" id="city" class="form-control" placeholder="City" alt="City">
+                </div>
+                <div class="col-2">
+                    <input type="text" id="state" class="form-control" placeholder="State" alt="State">
+                </div>
+                <div class="col-2">
+                    <input type="text" id="zip" class="form-control" placeholder="Zip" alt="Zipcode">
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" id="searchAddress">Search</button>
+                </div>
             </div>
-            <div class="col-3">
-                <input type="text" id="city" class="form-control" placeholder="City" alt="City">
-            </div>
-            <div class="col-2">
-                <input type="text" id="state" class="form-control" placeholder="State" alt="State">
-            </div>
-            <div class="col-2">
-                <input type="text" id="zip" class="form-control" placeholder="Zip" alt="Zipcode">
-            </div>
-            <div class="col">
-                <button class="btn btn-primary" id="searchAddress">Search</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    <!-- The HTML element that serves as the Mapbox container -->
+
+    <div class="container" id='map'></div>
+    <div class="card-deck" id="forecast"><!--Were going to add stuff here via Jquery--></div>
 </div>
 
 
-<!-- The HTML element that serves as the Mapbox container -->
 
-<div class="container" id='map'></div>
-<div class="card-deck" id="forecast"><!--Were going to add stuff here via Jquery--></div>
+
+
 
 
 <!-- Mapbox JS -->
@@ -97,8 +111,7 @@
             zip = '78205',
             address = streetName + ' ' + city + ' ' + state + ', ' + zip,
             lat = 0,
-            long = 0,
-            latLong = 0;
+            long = 0;
 
         //add stuff to html, this will add all the info into cards via bootstrap
         function appendToHTML(myDate, date, max, min, describe, speed, humidity) {
@@ -169,31 +182,53 @@
                     }
                 });
             });
-        })
-
-        //JSON get request for the WEATHER API
-        let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&appid=${WEATHER_KEY}`
-        $.get(api).done(function (data) {
-            // console.log(data);
-            $.each(data.daily, function (index, value) {
-                var myDate = new Date(value.dt * 1000);
-                //checking to see how date format is
-                /*                console.log(myDate);
-                                console.log(myDate.getDay());
-                                console.log(myDate.getDate())
-                                console.log(myDate.getMonth())*/
-
-                //set date to day / month format
-                var date = `${myDate.getMonth() + 1} / ${myDate.getDate()}`;
-
-                appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
-                //console.log(value);
-
-
-            })
-        }).fail(function () {
-            alert('failed request from weather application');
+            getWeatherInfo(lat, long);
         });
+
+        //when we click on map, lets add marker and get long and latitude coords
+        map.on('click', (e) => {
+            //console.log(typeof (e.lngLat.lat)); //returns number coord
+            lat = e.lngLat.lat;
+            long = e.lngLat.lng;
+            console.log(`long: ${long} lat: ${lat}`);
+            map.remove();
+            map.flyTo({
+                center: [lat, long],
+                zoom: 9,
+                speed: 0.2,
+                curve: 1,
+                easing(t) {
+                    return t;
+                }
+            });
+            getWeatherInfo(lat, long);
+        });
+
+        //function recieves JSON API file
+        function getWeatherInfo(lat, long) {
+            //JSON get request for the WEATHER API
+            let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&appid=${WEATHER_KEY}`
+            $.get(api).done(function (data) {
+                // console.log(data);
+                $.each(data.daily, function (index, value) {
+                    var myDate = new Date(value.dt * 1000);
+                    //checking to see how date format is
+                    /*                console.log(myDate);
+                                    console.log(myDate.getDay());
+                                    console.log(myDate.getDate())
+                                    console.log(myDate.getMonth())*/
+
+                    //set date to day / month format
+                    var date = `${myDate.getMonth() + 1} / ${myDate.getDate()}`;
+
+                    appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
+                    //console.log(value);
+
+                })
+            }).fail(function () {
+                alert('failed request from weather application');
+            });
+        }
 
 
     });
