@@ -12,7 +12,16 @@
     <!--mapbox css-->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <!-- Custom CSS -->
+
+    <!--google stuff-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
     <style>
+
+        *{
+            font-family: 'Short Stack', cursive, unbutu;
+        }
         #map {
             /* the width and height may be set to any size */
             width: 100%;
@@ -22,6 +31,10 @@
         .hidden {
             display: none;
         }
+        #social_media .btn:hover {
+            transition: 500ms;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +43,7 @@
 <!--navbar-->
 <nav class="navbar navbar-light bg-primary" id="nav">
     <div class="container">
-        <a class="navbar-brand" href="#">WM</a>
+        <a class="navbar-brand" href="#">WeatherMap</a>
     </div>
 
 </nav>
@@ -62,7 +75,7 @@
                 <div class="col-2">
                     <input type="text" id="state" class="form-control" placeholder="State" alt="State">
                 </div>
-                <div class="col-2">
+                <div class="col-1">
                     <input type="text" id="zip" class="form-control" placeholder="Zip" alt="Zipcode">
                 </div>
                 <div class="col">
@@ -76,8 +89,30 @@
     <div class="container" id='map'>
 
     </div>
-
 </div>
+
+
+<!--footer-->
+<section class="bg-dark text-white">
+    <!-- Section: Social media -->
+    <section class="mb-3 justify-content-center d-flex pt-5" id="social_media">
+        <!-- Linkedin -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="#" role="button"
+        ><img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="Linked_in" style="width: 40px; height: 40px;"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="#" role="button"
+        ><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github_logo" style="width: 40px; height: 40px"></a>
+
+    </section>
+    <p class="text-center">Follow Me on Social Media!</p>
+    <hr style="width: 80%; margin: auto; border: 1px solid red">
+    <section class="text-center py-3">
+        Website made by: Mario Granados
+    </section>
+
+
+</section>
 
 
 <!-- Mapbox JS -->
@@ -201,7 +236,7 @@
             addMarker(lat, long, map);
             map.flyTo({
                 center: [long, lat],
-                zoom: 15,
+                zoom: 13,
                 speed: 1.8,
                 curve: 1,
                 easing(t) {
@@ -257,9 +292,9 @@
 
         //this function adds class hidden to hide certain elements
         function hideElements() {
-            $('#nav').removeClass('bg-primary').addClass('bg-dark text-white', 5000, 'swing');
-            $('#hidden').addClass('hidden', 5000, 'swing')
-            $('button').removeClass('btn-primary').addClass('btn-dark', 5000, 'swing');
+            $('#nav').removeClass('bg-primary').addClass('bg-dark text-white');
+            $('#hidden').addClass('hidden')
+            $('button').removeClass('btn-primary').addClass('btn-dark');
         }
 
         function loading() {
