@@ -18,6 +18,7 @@
             width: 100%;
             height: 500px;
         }
+
         .hidden {
             display: none;
         }
@@ -27,7 +28,7 @@
 <!-- As a link -->
 
 <!--navbar-->
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-primary" id="nav">
     <div class="container">
         <a class="navbar-brand" href="#">WM</a>
     </div>
@@ -37,13 +38,15 @@
 <div class="jumbotron">
     <div id="hidden">
         <h1 class="display-4 text-center">The Weather Map App</h1>
-        <p class="lead text-center">This app displays the weather forecast for the next 7 days in any desired location</p>
+        <p class="lead text-center">This app displays the weather forecast for the next 7 days in any desired
+            location</p>
         <hr class="my-4">
-        <p class="text-center">click anywhere on the map, or search any location by filling out the information below</p>
+        <p class="text-center">click anywhere on the map, or search any location by filling out the information
+            below</p>
     </div>
     <!--form to search address-->
     <div class="container">
-        <form class="my-5">
+        <form class="my-5" id="form">
             <div class="form-row">
                 <div class="col-4">
                     <input type="text" id="street" class="form-control" placeholder="Street" alt="Street Name">
@@ -65,14 +68,16 @@
     </div>
     <!-- The HTML element that serves as the Mapbox container -->
 
-    <div class="container" id='map'></div>
-    <div class="card-deck" id="forecast"><!--Were going to add stuff here via Jquery--></div>
+    <div class="container" id='map'>
+
+    </div>
+
+    <div id="loading"></div>
+
+    <div class="card-deck" id="forecast">
+        <!--Were going to add stuff here via Jquery-->
+    </div>
 </div>
-
-
-
-
-
 
 
 <!-- Mapbox JS -->
@@ -111,10 +116,12 @@
             zip = '78205',
             address = streetName + ' ' + city + ' ' + state + ', ' + zip,
             lat = 0,
-            long = 0;
+            long = 0,
+            html = '';
 
         //add stuff to html, this will add all the info into cards via bootstrap
-        function appendToHTML(myDate, date, max, min, describe, speed, humidity) {
+        function appendToHTML(myDate, date, max, min, describe, speed, humidity, html) {
+            hideElements();
             switch (myDate.getDay()) {
                 case 0:
                     myDate = 'Sunday';
@@ -138,8 +145,7 @@
                     myDate = 'Saturday';
                     break;
             }
-
-            var html =
+            html =
                 `<div class="card" style="width: 18rem;">
                 <div class="card-header">
                     ${myDate} <br> ${date}
@@ -169,7 +175,7 @@
                                 map.setZoom(15);*/
                 lat = result[0];
                 long = result[1];
-
+                getWeatherInfo(long, lat);
                 // Using easeTo options, according to documentation
                 map.easeTo({
                     center: ([lat, long]),
@@ -181,8 +187,8 @@
                         return t;
                     }
                 });
+                addMarker(long, lat, map);
             });
-            getWeatherInfo(lat, long);
         });
 
         //when we click on map, lets add marker and get long and latitude coords
@@ -190,25 +196,32 @@
             //console.log(typeof (e.lngLat.lat)); //returns number coord
             lat = e.lngLat.lat;
             long = e.lngLat.lng;
-            console.log(`long: ${long} lat: ${lat}`);
-            map.remove();
+            /*            console.log(`long: ${long} lat: ${lat}`);
+                        console.log(`long: ${typeof(long)} lat: ${typeof(lat)}`);*/
+            addMarker(lat, long, map);
             map.flyTo({
-                center: [lat, long],
-                zoom: 9,
-                speed: 0.2,
+                center: [long, lat],
+                zoom: 15,
+                speed: 1.8,
                 curve: 1,
                 easing(t) {
                     return t;
                 }
             });
+            $('#forecast').text('');
             getWeatherInfo(lat, long);
         });
 
         //function recieves JSON API file
         function getWeatherInfo(lat, long) {
+            $('#loading').append(loading());
             //JSON get request for the WEATHER API
             let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&appid=${WEATHER_KEY}`
             $.get(api).done(function (data) {
+
+                //take off loading
+                $('#loading').text('');
+
                 // console.log(data);
                 $.each(data.daily, function (index, value) {
                     var myDate = new Date(value.dt * 1000);
@@ -230,7 +243,32 @@
             });
         }
 
+        //this function adds a marker
+        function addMarker(lat, long, map) {
+            let coordinates = ([long, lat]);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+            //removes marker on click
+            map.on('click', (e) => {
+                marker.remove();
+            })
+        }
 
+        //this function adds class hidden to hide certain elements
+        function hideElements() {
+            $('#nav').removeClass('bg-primary').addClass('bg-dark text-white', 5000, 'swing');
+            $('#hidden').addClass('hidden', 5000, 'swing')
+            $('button').removeClass('btn-primary').addClass('btn-dark', 5000, 'swing');
+        }
+
+        function loading() {
+            return `<div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Recieving weather data</span>
+                </div>
+            </div>`
+        }
     });
 </script>
 </body>
