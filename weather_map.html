@@ -16,7 +16,7 @@
         #map {
             /* the width and height may be set to any size */
             width: 100%;
-            height: 500px;
+            height: 400px;
         }
 
         .hidden {
@@ -43,6 +43,11 @@
         <hr class="my-4">
         <p class="text-center">click anywhere on the map, or search any location by filling out the information
             below</p>
+    </div>
+    <div id="loading"></div>
+
+    <div class="card-group" id="forecast">
+        <!--Were going to add stuff here via Jquery-->
     </div>
     <!--form to search address-->
     <div class="container">
@@ -72,11 +77,6 @@
 
     </div>
 
-    <div id="loading"></div>
-
-    <div class="card-deck" id="forecast">
-        <!--Were going to add stuff here via Jquery-->
-    </div>
 </div>
 
 
@@ -117,10 +117,11 @@
             address = streetName + ' ' + city + ' ' + state + ', ' + zip,
             lat = 0,
             long = 0,
-            html = '';
+            html = '',
+            iconUrl = "http://openweathermap.org/img/wn/", iconPng = "@2x.png";
 
         //add stuff to html, this will add all the info into cards via bootstrap
-        function appendToHTML(myDate, date, max, min, describe, speed, humidity, html) {
+        function appendToHTML(myDate, date, max, min, describe, speed, humidity, html, icon) {
             hideElements();
             switch (myDate.getDay()) {
                 case 0:
@@ -147,15 +148,14 @@
             }
             html =
                 `<div class="card" style="width: 18rem;">
-                <div class="card-header">
+                <div class="card-header text-white text-center bg-dark">
                     ${myDate} <br> ${date}
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">High:${max} / Low:${min}</li>
-                    <li class="list-group-item">Forecast: ${describe}</li>
-                    <li class="list-group-item">Wind Speed: ${speed}mph</li>
-                    <li class="list-group-item">Humidity${humidity}%</li>
-                </ul>
+                    <div class="list-group-item text-center">High:${max} <br> Low:${min}</div>
+                    <div class="list-group-item text-center p-3">
+                    <img src="${iconUrl + icon + iconPng}" alt="${describe}">${describe}</div>
+                    <div class="list-group-item text-center">Wind: <br> ${speed}mph</div>
+                    <div class="list-group-item text-center">Humidity <br> ${humidity}%</div>
             </div>`;
             $('#forecast').append(html);
         }
@@ -222,7 +222,7 @@
                 //take off loading
                 $('#loading').text('');
 
-                // console.log(data);
+                //console.log(data);
                 $.each(data.daily, function (index, value) {
                     var myDate = new Date(value.dt * 1000);
                     //checking to see how date format is
@@ -234,7 +234,7 @@
                     //set date to day / month format
                     var date = `${myDate.getMonth() + 1} / ${myDate.getDate()}`;
 
-                    appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity)
+                    appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity, html, value.weather[0].icon)
                     //console.log(value);
 
                 })
