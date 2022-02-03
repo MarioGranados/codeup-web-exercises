@@ -10,11 +10,24 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <title>Mario Granados</title>
+    <style>
+        .bg-image {
+            background-image: linear-gradient(rgba(16, 40, 102, 0.9), rgba(144, 26, 26, 0.39)), url("https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif");
+            /*            background-image: url("https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif");*/
+            height: 95vh;
+            width: 100%;
+        }
+
+        .bg_opacity {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Mario Granados</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNavAltMarkup">
@@ -26,8 +39,12 @@
     </div>
 </nav>
 <!--Here is my attention grabber-->
-<section>
-    <div class="container"></div>
+<section class="bg-image">
+    <div class="container bg_opacity align-content-center">
+        <div class="d-flex flex-column align-content-center">
+            <div class="display-4">Full-Stack Developer</div>
+            <div class="lead">I wanna be the very best, Like no one ever was</div>
+        </div>
 </section>
 <main id="hero"> <!--function here--></main>
 
@@ -61,7 +78,7 @@
 <script>
     //place content here
     let header = [
-        'title 1', 'title 2', 'title 3', 'title 4'
+            'title 1', 'title 2', 'title 3', 'title 4'
         ],
         body = [
             'body 1', 'body 2', 'body 3', 'body 4'
@@ -73,12 +90,14 @@
         <h1 class="display-4">${header}</h1>
         <p class="lead">${body}</p>`
     }
+
     function contentRight(header, body) {
         return `
         <h1 class="display-4 text-right">${header}</h1>
         <p class="lead text-right">${body}</p>`
     }
-    function portfolio () {
+
+    function portfolio() {
         return `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -131,8 +150,7 @@
                     ${portfolio()}
                  </div>
                 </div>`
-            }
-            else if (i % 2 !== 0) {
+            } else if (i % 2 !== 0) {
                 appended +=
                     `<div class="jumbotron jumbotron-fluid my-0" style="height: 100vh">
                  <div class="container my-0">
@@ -141,7 +159,7 @@
                 </div>`
             } else {
                 appended +=
-            `<div class="jumbotron jumbotron-fluid bg-dark text-white my-0" style="height: 100vh">
+                    `<div class="jumbotron jumbotron-fluid bg-dark text-white my-0" style="height: 100vh">
                  <div class="container my-0">
                     ${contentRight(header[i], body[i])}
                  </div>
