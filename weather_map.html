@@ -16,12 +16,13 @@
     <!--google stuff-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <style>
 
-        *{
-            font-family: 'Short Stack', cursive, unbutu;
+        * {
+            font-family: 'Roboto Condensed', sans-serif;
         }
+
         #map {
             /* the width and height may be set to any size */
             width: 100%;
@@ -31,6 +32,7 @@
         .hidden {
             display: none;
         }
+
         #social_media .btn:hover {
             transition: 500ms;
             background-color: white;
@@ -48,9 +50,9 @@
 
 </nav>
 
-<div class="jumbotron">
+<div class="jumbotron mb-0">
     <div id="hidden">
-        <h1 class="display-4 text-center">The Weather Map App</h1>
+        <h1 class="display-4 text-center" id="error">The Weather Map App</h1>
         <p class="lead text-center">This app displays the weather forecast for the next 7 days in any desired
             location</p>
         <hr class="my-4">
@@ -107,12 +109,14 @@
     <!-- Section: Social media -->
     <section class="mb-3 justify-content-center d-flex pt-5" id="social_media">
         <!-- Linkedin -->
-        <a class="btn btn-outline-dark btn-floating m-1" href="#" role="button"
-        ><img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="Linked_in" style="width: 40px; height: 40px;"></i></a>
+        <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com/in/mario-granados-18a21b186/" role="button"><img
+                src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
+                alt="Linked_in" style="width: 40px; height: 40px;"></a>
 
         <!-- Github -->
-        <a class="btn btn-outline-dark btn-floating m-1" href="#" role="button"
-        ><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github_logo" style="width: 40px; height: 40px"></a>
+        <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com/MarioGranados" role="button"
+        ><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github_logo"
+              style="width: 40px; height: 40px"></a>
 
     </section>
     <p class="text-center">Follow Me on Social Media!</p>
@@ -137,22 +141,28 @@
         crossorigin="anonymous"></script>
 
 <!--JQuery-->
-<script src="./js/jquery-2.2.4.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 <!--GeoCoder-->
 <script src="./js/mapbox-geocoder-utils.js"></script>
 
 <script>
     //after loaded document
     $(document).ready(() => {
-        const WEATHER_KEY = ''
-        mapboxgl.accessToken = '';
+        const WEATHER_KEY = '0029b0b62fa128718a575fdfda32ba6f'
+        mapboxgl.accessToken = "pk.eyJ1IjoibWFyaW9ncmFuYWRvcyIsImEiOiJja3oyeXVyMnAwMWpkMm5ueHF2ZnhlZmpsIn0.yVQOsReBceDhGPXKHbZxew";
         const MAP_BOX = mapboxgl.accessToken;
-        var map = new mapboxgl.Map({
+        let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
             zoom: 10,
-            center: [-98.4916, 29.4252]
+            center: [-98.4916, 29.4252],
         });
+
+        const nav = new mapboxgl.NavigationControl({
+            visualizePitch: true
+        });
+        map.addControl(nav, 'bottom-right');
 
         //if we need to search a new city, this will allow us to override the current city
         let city = 'San Antonio',
@@ -192,7 +202,7 @@
                     break;
             }
             html =
-                `<div class="card" style="width: 18rem;">
+                `<div class="card m-md-auto" style="width: 18rem;">
                 <div class="card-header text-white text-center bg-dark">
                     ${myDate} <br> ${date}
                 </div>
@@ -247,7 +257,7 @@
             addMarker(lat, long, map);
             map.flyTo({
                 center: [long, lat],
-                zoom: 13,
+                zoom: 11,
                 speed: 1.8,
                 curve: 1,
                 easing(t) {
@@ -271,11 +281,6 @@
                 //console.log(data);
                 $.each(data.daily, function (index, value) {
                     var myDate = new Date(value.dt * 1000);
-                    //checking to see how date format is
-                    /*                console.log(myDate);
-                                    console.log(myDate.getDay());
-                                    console.log(myDate.getDate())
-                                    console.log(myDate.getMonth())*/
 
                     //set date to day / month format
                     var date = `${myDate.getMonth() + 1} / ${myDate.getDate()}`;
@@ -283,9 +288,12 @@
                     appendToHTML(myDate, date, value.temp.max, value.temp.min, value.weather[0].description, value.wind_speed, value.humidity, html, value.weather[0].icon)
                     //console.log(value);
 
+                    map.setStyle('mapbox://styles/mapbox/navigation-night-v1');
+
                 })
             }).fail(function () {
-                alert('failed request from weather application');
+                $('#loading').text('');
+                errorLoad();
             });
         }
 
@@ -315,7 +323,15 @@
                 </div>
             </div>`
         }
+
+        function errorLoad() {
+            $('#error').text('We were unable load the current weather at this location, Please Try again later');
+            $('#hidden').removeClass('hidden');
+        }
+
+
     });
+
 </script>
 </body>
 </html>
