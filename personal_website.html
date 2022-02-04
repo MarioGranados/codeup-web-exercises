@@ -14,7 +14,6 @@
         .bg-image {
             background-image: linear-gradient(rgba(16, 40, 102, 0.9), rgba(144, 26, 26, 0.39)), url("https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif");
             /*            background-image: url("https://thumbs.gfycat.com/BriefIgnorantBlackbuck-size_restricted.gif");*/
-            height: 95vh;
             width: 100%;
         }
 
@@ -24,34 +23,45 @@
 
         .bg_color {
             background-color: #0BC9CD;
-            height: 100vh;
+        }
 
+        .nav_bg_color {
+            background-image: linear-gradient(rgba(18, 45, 75, 0.54), rgb(6, 22, 93));
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Mario Granados</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Resume</a>
-            <a class="nav-link" href="#">Portfolio</a>
-        </div>
-    </div>
-</nav>
 <!--Here is my attention grabber-->
 <section class="bg-image">
+
+    <nav class="navbar navbar-expand-lg navbar-light nav_bg_color">
+        <a class="navbar-brand" href="#">Mario Granados</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Resume</a>
+                <a class="nav-link" href="#">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="row">
-        <div class="col-12 align-items-center d-flex">
-            <div class="container">
-                <div class="bg_opacity p-4">
+        <div class="col-12">
+            <div class="container-fluid justify-content-center d-flex">
+                <div class="bg_opacity p-4 text-center">
                     <div class="display-4">Full-Stack Developer</div>
-                    <div class="lead">I wanna be the very best, Like no one ever was</div>
+                    <div class="lead">
+                        Hello! My name is Mario Granados. I am a professional Web Developer <br> with expert knowledge in <span class="badge badge-primary">JavaScript</span> and
+                        <span class="badge badge-danger">JQuery</span> <br>
+                        I am well experienced in <span class="badge badge-primary">Object-Oriented Programming,</span> <br>
+                        <span class="badge badge-dark">Test-Driven Development,</span> and
+                        <span class="badge badge-dark">Version Control With Git</span> <br>
+                        I am very passionate about programming by <br> pursuing new methods to improve technology, <br> by helping businesses take their store <br> to the internet.
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,10 +78,18 @@
             <div class="row p-5">
                 <div class="col">
                     <!--social media-->
-                    <div class="display-2">Mario Granados</div>
-                    <div class="muted">Full-Stack Developer</div>
+                    <div class="display-4">Mario Granados</div>
+                    <div class="text-muted">Full-Stack Developer</div>
+                    <div class="lead">
+                        <a href="#">Mario.Alberto.Granados1@Gmail.com</a>
+                    </div>
+                    <div class="display-4">Follow Me!</div>
+                    <div class="d-flex justify-content-between w-50">
+                        <div class="text-muted">Github</div>
+                        <div class="text-muted">LinkedIn</div>
+                        <div class="text-muted">Instagram</div>
+                    </div>
 
-                    <div class="display-1">mario.</div>
                 </div>
                 <div class="col">
                     <!--contact here-->
@@ -79,20 +97,24 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="firstName">First Name</label>
-                                <input type="text" class="form-control bg-transparent text-white" id="firstName" placeholder="John">
+                                <input type="text" class="form-control bg-transparent text-white" id="firstName"
+                                       placeholder="John">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control bg-transparent text-white" id="lastName" placeholder="Smith">
+                                <input type="text" class="form-control bg-transparent text-white" id="lastName"
+                                       placeholder="Smith">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="tel" class="form-control bg-transparent text-white" id="phoneNumber" placeholder="000 000 0000">
+                            <input type="tel" class="form-control bg-transparent text-white" id="phoneNumber"
+                                   placeholder="000 000 0000">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control bg-transparent text-white" id="email" placeholder="example@email.com">
+                            <input type="email" class="form-control bg-transparent text-white" id="email"
+                                   placeholder="example@email.com">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -101,7 +123,7 @@
                         <div class="form-group">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck" >
+                                <label class="form-check-label" for="gridCheck">
                                     Subscribe
                                 </label>
                             </div>
@@ -110,6 +132,8 @@
                     </form>
                 </div>
             </div>
+            <hr style="width: 80%; border: 1px solid rgba(138,33,33,0.67);" class="m-auto">
+            <div class="text-center p-2">Mario Granados</div>
         </div>
     </div>
 </footer>
@@ -168,23 +192,23 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://${loremPic}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+      <div class="carousel-caption d-none d-md-block bg_opacity text-dark">
+        <h5>Coffee Project</h5>
+        <p>This Web Application filters through a list of coffees, and can modify the list using the DOM's Local Storage</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://${loremPic}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+      <div class="carousel-caption d-none d-md-block bg_opacity text-dark">
+        <h5>Konami Code</h5>
+        <p>You enter a code in a specific sequence to unlock a fake website.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://${loremPic}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+      <div class="carousel-caption d-none d-md-block bg_opacity text-dark">
+        <h5>Web Application</h5>
+        <p>A web application that recieves weather data of any desired location by using Mapbox API, and Weathermap API.</p>
       </div>
     </div>
   </div>
@@ -198,7 +222,6 @@
   </button>
 </div>`;
     }
-
     function heroAppend() {
         var html = '',
             appended = '';
@@ -206,14 +229,14 @@
             appended = '';
             if (i === 3) {
                 appended +=
-                    `<div class="jumbotron jumbotron-fluid my-0" style="height: 100vh">
+                    `<div class="jumbotron jumbotron-fluid my-0" >
                  <div class="container my-0">
                     ${portfolio()}
                  </div>
                 </div>`
             } else if (i % 2 !== 0) {
                 appended +=
-                    `<div class="jumbotron jumbotron-fluid my-0" style="height: 100vh">
+                    `<div class="jumbotron jumbotron-fluid my-0">
                  <div class="container my-0">
                     <div class="row">
                              ${contentLeft(header[i], body[i])}
